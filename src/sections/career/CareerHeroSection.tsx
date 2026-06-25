@@ -1,5 +1,7 @@
+'use client'
+
 import { ArrowRight } from 'lucide-react'
-import { Link } from 'react-router-dom'
+import Link from 'next/link'
 import ScrollReveal from '../../components/ScrollReveal'
 
 export default function CareerHeroSection() {
@@ -35,7 +37,7 @@ export default function CareerHeroSection() {
 
         <ScrollReveal delay={0.3} className="flex flex-col sm:flex-row items-center justify-center gap-4 mt-10">
           <Link
-            to="#openings"
+            href="#openings"
             className="group inline-flex items-center gap-2 text-[15px] font-semibold rounded-full transition-all duration-300 hover:scale-[1.02]"
             style={{ backgroundColor: '#c8f07d', color: '#1a1a1a', padding: '14px 32px' }}
           >
@@ -43,7 +45,7 @@ export default function CareerHeroSection() {
             <ArrowRight size={16} className="transition-transform duration-300 group-hover:translate-x-1" />
           </Link>
           <Link
-            to="/contact"
+            href="/contact"
             className="group inline-flex items-center gap-2 text-[15px] font-semibold text-white rounded-full transition-all duration-300"
             style={{ backgroundColor: 'transparent', border: '1px solid #3d3d3d', padding: '14px 32px' }}
             onMouseEnter={(e) => { e.currentTarget.style.borderColor = '#c8f07d' }}

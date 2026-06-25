@@ -1,5 +1,5 @@
 import { ArrowRight } from 'lucide-react'
-import { Link } from 'react-router-dom'
+import Link from 'next/link'
 import ScrollReveal from '../../components/ScrollReveal'
 
 export default function CTABannerSection() {
@@ -18,7 +18,7 @@ export default function CTABannerSection() {
               Let&apos;s sit down and figure out what you actually need. No sales pitch — just honest engineering advice.
             </p>
             <Link
-              to="/contact"
+              href="/contact"
               className="group inline-flex items-center gap-2 mt-8 text-[15px] font-semibold rounded-full transition-all duration-300 hover:scale-[1.02]"
               style={{ backgroundColor: '#c8f07d', color: '#1a1a1a', padding: '16px 36px' }}
             >

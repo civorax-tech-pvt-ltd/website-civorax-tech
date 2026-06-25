@@ -1,7 +1,7 @@
 import { Check, ArrowRight } from 'lucide-react'
 import SectionHeader from '../../components/SectionHeader'
 import ScrollReveal from '../../components/ScrollReveal'
-import { Link } from 'react-router-dom'
+import Link from 'next/link'
 
 const products = [
   {
@@ -49,7 +49,6 @@ export default function ProductCardsSection() {
                 className="bg-white rounded-2xl p-8 md:p-10 h-full transition-all duration-300 hover:-translate-y-1"
                 style={{ boxShadow: '0 2px 8px rgba(0,0,0,0.06)' }}
               >
-                {/* Badge */}
                 <span
                   className="inline-block rounded-lg px-3 py-1 label-text"
                   style={{ backgroundColor: '#f0f7e0', color: '#5a7a2a' }}
@@ -57,17 +56,14 @@ export default function ProductCardsSection() {
                   {product.badge}
                 </span>
 
-                {/* Title */}
                 <h3 className="mt-4 text-xl md:text-[28px] font-bold" style={{ color: '#1a1a1a' }}>
                   {product.title}
                 </h3>
 
-                {/* Description */}
                 <p className="mt-3 text-base leading-relaxed" style={{ color: '#6b7280' }}>
                   {product.description}
                 </p>
 
-                {/* Features */}
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-8">
                   {product.features.map((f) => (
                     <div key={f.label} className="flex items-start gap-3">
@@ -85,9 +81,8 @@ export default function ProductCardsSection() {
                   ))}
                 </div>
 
-                {/* CTA */}
                 <Link
-                  to="/contact"
+                  href="/contact"
                   className="group inline-flex items-center gap-1 mt-8 label-text transition-colors duration-200 hover:text-[#8ab53d]"
                   style={{ color: '#1a1a1a' }}
                 >

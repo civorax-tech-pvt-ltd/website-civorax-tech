@@ -1,5 +1,5 @@
 import { ArrowRight } from 'lucide-react'
-import { Link } from 'react-router-dom'
+import Link from 'next/link'
 import ScrollReveal from '../../components/ScrollReveal'
 
 export default function ProductsCTASection() {
@@ -28,7 +28,7 @@ export default function ProductsCTASection() {
                 +977-9805309473
               </p>
               <Link
-                to="/contact"
+                href="/contact"
                 className="group inline-flex items-center gap-2 mt-4 text-[15px] font-semibold text-white rounded-full transition-all duration-300 hover:bg-white hover:text-[#1a1a1a]"
                 style={{
                   backgroundColor: '#2d2d2d',

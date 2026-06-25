@@ -1,7 +1,7 @@
 import { Code2, Smartphone, Bug, Users, ArrowRight } from 'lucide-react'
 import SectionHeader from '../../components/SectionHeader'
 import ScrollReveal from '../../components/ScrollReveal'
-import { Link } from 'react-router-dom'
+import Link from 'next/link'
 
 const jobs = [
   {
@@ -69,7 +69,7 @@ export default function OpenPositionsSection() {
                 </p>
 
                 <Link
-                  to="/contact"
+                  href="/contact"
                   className="group inline-flex items-center gap-1 mt-6 label-text transition-colors duration-200 hover:text-[#8ab53d]"
                   style={{ color: '#1a1a1a' }}
                 >

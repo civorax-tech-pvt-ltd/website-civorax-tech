@@ -1,7 +1,7 @@
 import { Shield, Cpu, BarChart3, Receipt } from 'lucide-react'
 import SectionHeader from '../../components/SectionHeader'
 import ScrollReveal from '../../components/ScrollReveal'
-import { Link } from 'react-router-dom'
+import Link from 'next/link'
 import { ArrowRight } from 'lucide-react'
 
 const features = [
@@ -61,7 +61,7 @@ export default function KeyFeaturesSection() {
                       {feature.description}
                     </p>
                     <Link
-                      to="/products"
+                      href="/products"
                       className="group inline-flex items-center gap-1 mt-4 label-text transition-colors duration-200 hover:text-[#8ab53d]"
                       style={{ color: '#1a1a1a' }}
                     >

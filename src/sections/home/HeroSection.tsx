@@ -1,8 +1,10 @@
+'use client'
+
 import { useRef } from 'react'
 import { useGSAP } from '@gsap/react'
 import gsap from 'gsap'
 import { ArrowRight } from 'lucide-react'
-import { Link } from 'react-router-dom'
+import Link from 'next/link'
 
 export default function HeroSection() {
   const containerRef = useRef<HTMLDivElement>(null)
@@ -72,7 +74,7 @@ export default function HeroSection() {
         {/* CTAs */}
         <div className="hero-cta opacity-0 flex flex-col sm:flex-row items-center justify-center gap-4 mt-10">
           <Link
-            to="/contact"
+            href="/contact"
             className="group inline-flex items-center gap-2 text-[15px] font-semibold rounded-full transition-all duration-300 hover:scale-[1.02]"
             style={{ backgroundColor: '#c8f07d', color: '#1a1a1a', padding: '14px 32px' }}
           >
@@ -80,7 +82,7 @@ export default function HeroSection() {
             <ArrowRight size={16} className="transition-transform duration-300 group-hover:translate-x-1" />
           </Link>
           <Link
-            to="/products"
+            href="/products"
             className="group inline-flex items-center gap-2 text-[15px] font-semibold text-white rounded-full transition-all duration-300 hover:scale-[1.02]"
             style={{ backgroundColor: 'transparent', border: '1px solid #3d3d3d', padding: '14px 32px' }}
             onMouseEnter={(e) => { e.currentTarget.style.borderColor = '#c8f07d' }}

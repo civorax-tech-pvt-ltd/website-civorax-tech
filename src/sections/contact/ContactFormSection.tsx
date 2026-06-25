@@ -1,3 +1,5 @@
+'use client'
+
 import { Mail, MapPin, Clock } from 'lucide-react'
 import ScrollReveal from '../../components/ScrollReveal'
 
