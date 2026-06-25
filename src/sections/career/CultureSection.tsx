@@ -5,12 +5,12 @@ const values = [
   {
     icon: Users,
     title: 'Direct Mentorship',
-    description: 'Work directly with senior engineers. No layers of management between you and the craft.',
+    description: 'Work directly with senior engineers. No layers of management between you and the work.',
   },
   {
     icon: Target,
     title: 'Meaningful Impact',
-    description: 'Your code keeps shops running during load-shedding and internet outages. Real consequences, real satisfaction.',
+    description: 'Your code keeps shops running during load-shedding. Real consequences, real satisfaction.',
   },
 ]
 
@@ -19,18 +19,19 @@ export default function CultureSection() {
     <section className="section-padding bg-white">
       <div className="content-max-width max-w-[800px] mx-auto text-center">
         <ScrollReveal>
-          <h2 className="text-3xl md:text-[42px] font-bold leading-tight" style={{ color: '#1a1a1a', letterSpacing: '-0.01em' }}>
-            Engineering craft over marketing hype.
+          <span className="label-text" style={{ color: '#8ab53d' }}>WHY CIVORAX</span>
+          <h2 className="mt-4 text-3xl md:text-[42px] font-bold leading-tight" style={{ color: '#1a1a1a', letterSpacing: '-0.01em' }}>
+            We don&apos;t chase trends.
           </h2>
         </ScrollReveal>
 
         <ScrollReveal delay={0.1}>
           <div className="mt-6 space-y-4 text-base leading-relaxed" style={{ color: '#6b7280' }}>
             <p>
-              We don&apos;t chase trends. We build offline-first systems that survive Nepal&apos;s real infrastructure — intermittent power, unreliable internet, and the need for IRD-compliant tax logging that works without a live connection.
+              We build offline-first systems that survive Nepal&apos;s real infrastructure — intermittent power, unreliable internet, and IRD compliance requirements that most software ignores entirely.
             </p>
             <p>
-              Every engineer here writes production code from day one. No code reviews that take weeks. No sprint meetings about sprint meetings. Just building systems that matter.
+              If you are from Dharan, Itahari, Biratnagar, or anywhere in Koshi Province and you want to build software that your own community actually uses, this is that place.
             </p>
           </div>
         </ScrollReveal>

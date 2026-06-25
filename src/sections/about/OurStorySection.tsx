@@ -17,27 +17,18 @@ export default function OurStorySection() {
             <ScrollReveal delay={0.1}>
               <div className="mt-6 space-y-4 text-base leading-relaxed" style={{ color: '#6b7280' }}>
                 <p>
-                  CivoraX started in 2026 in Dharan. A group of engineers got tired of watching businesses fail because their software needed constant internet or locked them into platforms they couldn&apos;t control.
+                  CivoraX was founded in 2026 in Dharan by Dheeraj Uparkoti and a group of engineers who grew up watching businesses in Koshi Province struggle with software that assumed perfect conditions — stable internet, reliable power, and IT staff who could troubleshoot on the fly.
                 </p>
                 <p>
-                  We believe in giving clients their code. No hidden dependencies, no vendor lock-in, full IRD compliance from day one. Your team should be able to read, maintain, and extend the code without calling us back.
+                  Most of that software was built somewhere else, for someone else&apos;s infrastructure. It didn&apos;t account for load-shedding. It didn&apos;t work offline. It locked businesses into subscriptions they couldn&apos;t exit and platforms they couldn&apos;t control.
                 </p>
                 <p>
-                  We mainly serve Nepal, where our software is IRD-compliant by design. We sometimes take on projects elsewhere in South Asia, especially where bad connectivity is a real problem.
+                  We started CivoraX to fix that. Every system we build is owned entirely by the client. No subscriptions, no forced updates, no calling us back because we hold the keys. IRD compliance is built in from day one, not bolted on later.
+                </p>
+                <p>
+                  We are based in Dharan. We mainly serve Nepal. We sometimes take on projects elsewhere in South Asia where bad connectivity is a real constraint. We build software the way infrastructure should be built — with the assumption that conditions will be imperfect, and the system must work anyway.
                 </p>
               </div>
-            </ScrollReveal>
-
-            <ScrollReveal delay={0.2}>
-              <blockquote
-                className="mt-8 text-lg italic leading-relaxed pl-6 py-2"
-                style={{
-                  color: '#1a1a1a',
-                  borderLeft: '3px solid #c8f07d',
-                }}
-              >
-                We build software the way infrastructure should be built — with the assumption that conditions will be imperfect, and the system must work anyway.
-              </blockquote>
             </ScrollReveal>
           </div>
 
@@ -45,7 +36,7 @@ export default function OurStorySection() {
           <ScrollReveal delay={0.15}>
             <img
               src="/assets/team-office.jpg"
-              alt="CivoraX team working in their modern Dharan office"
+              alt="CivoraX team working in their Dharan office"
               className="w-full rounded-2xl object-cover aspect-[4/3]"
             />
           </ScrollReveal>

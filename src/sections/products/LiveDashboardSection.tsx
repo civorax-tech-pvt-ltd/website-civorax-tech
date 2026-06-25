@@ -1,26 +1,24 @@
 import ScrollReveal from '../../components/ScrollReveal'
 
 const metrics = [
-  { label: 'TRANSACTIONS / 24H', value: '1,284', detail: '▲ 12.4% vs yesterday', detailColor: '#4ecdc4' },
-  { label: 'ACTIVE TERMINALS', value: '36', detail: '/38', detailSub: '2 in maintenance' },
-  { label: 'BRANCHES ONLINE', value: '11', detail: '/12', detailSub: '1 syncing (Gandaki)' },
-  { label: 'IRD SUBMISSIONS', value: '100%', detail: '✓ All branches compliant', detailColor: '#4ecdc4' },
+  { label: 'TRANSACTIONS / 24H', value: '187', detail: '▲ 9.2% vs yesterday', detailColor: '#4ecdc4' },
+  { label: 'ACTIVE TERMINALS', value: '8', detail: '/9', detailSub: '1 in configuration' },
+  { label: 'BRANCHES ONLINE', value: '3', detail: '/3', detailSub: '' },
+  { label: 'IRD SUBMISSIONS', value: '100%', detail: 'All branches compliant', detailColor: '#4ecdc4' },
 ]
 
-const hourlyData = [45, 62, 78, 55, 90, 120, 95, 85, 110, 130, 105, 88]
+const hourlyData = [12, 18, 25, 20, 30, 28, 22, 15, 10, 8, 5, 2]
 const timeLabels = ['08', '09', '10', '11', '12', '13', '14', '15', '16', '17', '18', '19']
 
 const events = [
   'CHK · DHARAN-01 · Rs. 2,480',
-  'SYNC · BAGMATI-04 · OK',
-  'VAT · KATH-02 · LOG #1482',
-  'CHK · DHARAN-03 · Rs. 1,950',
-  'RETRY · GANDAKI · 3s',
-  'CHK · BIRAT-01 · Rs. 880',
-  'SYNC · KOSHI-02 · OK',
-  'CHK · DHARAN-01 · Rs. 3,120',
-  'VAT · BAGMATI-02 · LOG #1483',
-  'SYNC · KATH-03 · OK',
+  'SYNC · ITAHARI-01 · OK',
+  'VAT · DHARAN-02 · LOG #0041',
+  'CHK · DHARAN-01 · Rs. 1,150',
+  'CHK · ITAHARI-01 · Rs. 880',
+  'SYNC · DHARAN-03 · OK',
+  'VAT · ITAHARI-01 · LOG #0042',
+  'CHK · DHARAN-02 · Rs. 3,120',
 ]
 
 export default function LiveDashboardSection() {
@@ -36,10 +34,10 @@ export default function LiveDashboardSection() {
             <div className="flex items-center justify-between px-6 py-4">
               <div className="flex items-center gap-3">
                 <span className="w-2 h-2 rounded-full" style={{ backgroundColor: '#4ecdc4' }} />
-                <span className="label-text" style={{ color: '#1a1a1a' }}>LIVE PRODUCTION SNAPSHOT</span>
-                <span className="label-text" style={{ color: '#6b7280' }}>• Jun 23, 2026</span>
+                <span className="label-text" style={{ color: '#1a1a1a' }}>LIVE BETA SNAPSHOT</span>
+                <span className="label-text" style={{ color: '#6b7280' }}>• Jun 2026</span>
               </div>
-              <span className="label-text" style={{ color: '#6b7280' }}>SCOPE: ALL BRANCHES</span>
+              <span className="label-text" style={{ color: '#6b7280' }}>SCOPE: KOSHI PROVINCE BETA</span>
             </div>
 
             {/* Metrics Grid */}
@@ -81,8 +79,8 @@ export default function LiveDashboardSection() {
                       <div
                         className="w-full rounded-t"
                         style={{
-                          height: `${(val / 130) * 100}%`,
-                          backgroundColor: `rgba(200,240,125, ${0.4 + (val / 130) * 0.6})`,
+                          height: `${(val / 30) * 100}%`,
+                          backgroundColor: `rgba(200,240,125, ${0.4 + (val / 30) * 0.6})`,
                           minHeight: '4px',
                         }}
                       />
@@ -120,7 +118,7 @@ export default function LiveDashboardSection() {
           <div className="flex flex-wrap items-center gap-x-8 gap-y-2 mt-4 px-2">
             <span className="text-sm" style={{ color: '#6b7280' }}>All sync engines nominal</span>
             <span className="font-mono text-[13px]" style={{ color: '#6b7280' }}>
-              REQ/s: 284 • LATENCY: 42ms • ERR: 0.01%
+              REQ/s: 24 · LATENCY: 48ms · ERR: 0.00%
             </span>
           </div>
         </ScrollReveal>

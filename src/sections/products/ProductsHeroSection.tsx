@@ -34,8 +34,17 @@ export default function ProductsHeroSection() {
             className="mt-6 text-base sm:text-lg leading-relaxed max-w-[560px] mx-auto"
             style={{ color: '#9ca3af' }}
           >
-            A live snapshot of our deployed systems across Koshi and Bagmati. Real production telemetry — counters, sync state, and transaction throughput from active branches.
+            Our POS and ERP systems are currently in private beta with select businesses across Koshi Province. What you see below is live beta telemetry — real transactions, real sync events, real IRD submissions from our active deployments.
           </p>
+        </ScrollReveal>
+
+        <ScrollReveal delay={0.3} className="flex flex-wrap items-center justify-center gap-6 mt-8">
+          <span className="label-text" style={{ color: '#9ca3af' }}>
+            LIVE BETA SNAPSHOT · Jun 2026
+          </span>
+          <span className="label-text" style={{ color: '#9ca3af' }}>
+            SCOPE: KOSHI PROVINCE BETA
+          </span>
         </ScrollReveal>
       </div>
     </section>

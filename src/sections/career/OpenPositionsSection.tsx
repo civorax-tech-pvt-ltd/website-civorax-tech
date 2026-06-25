@@ -1,4 +1,4 @@
-import { Code2, Layout, ArrowRight } from 'lucide-react'
+import { Code2, Smartphone, Bug, Users, ArrowRight } from 'lucide-react'
 import SectionHeader from '../../components/SectionHeader'
 import ScrollReveal from '../../components/ScrollReveal'
 import { Link } from 'react-router-dom'
@@ -7,14 +7,26 @@ const jobs = [
   {
     icon: Code2,
     title: 'Backend Engineer',
-    meta: 'FULL-TIME • DHARAN / REMOTE',
-    description: 'Build Go-based sync engines and PostgreSQL infrastructure for offline-first systems. Work on real production code that handles intermittent connectivity and branch synchronization.',
+    meta: 'FULL-TIME · DHARAN / REMOTE',
+    description: 'Build server-side systems and transaction engines for offline-first POS and ERP deployments. Work on real production code that handles intermittent connectivity, branch synchronization, and IRD compliance logic.',
   },
   {
-    icon: Layout,
-    title: 'Frontend Engineer',
-    meta: 'FULL-TIME • DHARAN / REMOTE',
-    description: 'Craft responsive, accessible interfaces for retail POS and ERP dashboards. Optimize for low-bandwidth, mobile-first experiences across Nepali market devices.',
+    icon: Smartphone,
+    title: 'Mobile Engineer',
+    meta: 'FULL-TIME · DHARAN / REMOTE',
+    description: 'Build Flutter-based interfaces for retail environments. Optimize for low-end Android devices and slow mobile connections across Koshi and Bagmati Province.',
+  },
+  {
+    icon: Bug,
+    title: 'QA Engineer',
+    meta: 'FULL-TIME · DHARAN / REMOTE',
+    description: 'Test POS and ERP systems under real-world conditions. Write test cases for offline sync transitions, printer failures, and concurrent terminal conflicts. If it can break in a Dharan shop, you find it first.',
+  },
+  {
+    icon: Users,
+    title: 'HR & Operations Associate',
+    meta: 'FULL-TIME · DHARAN',
+    description: 'Support hiring, onboarding, and studio operations as the team grows. First point of contact for new engineers joining CivoraX.',
   },
 ]
 

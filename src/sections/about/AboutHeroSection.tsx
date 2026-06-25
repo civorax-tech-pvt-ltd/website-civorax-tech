@@ -24,7 +24,7 @@ export default function AboutHeroSection() {
             className="mt-6 text-base sm:text-lg leading-relaxed max-w-[560px] mx-auto"
             style={{ color: '#9ca3af' }}
           >
-            CivoraX Tech Pvt. Ltd. is a small engineering studio in Dharan that builds offline-first retail POS, multi-branch ERPs, and custom web portals.
+            CivoraX Tech Pvt. Ltd. is a software engineering studio in Dharan that builds offline-first retail POS systems, multi-branch ERPs, and custom web portals for businesses across Koshi Province and beyond.
           </p>
         </ScrollReveal>
       </div>

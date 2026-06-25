@@ -40,10 +40,10 @@ export default function ClientQuoteSection() {
         />
 
         <p className="quote-author opacity-0 text-base font-semibold text-white">
-          Ramesh Karki
+          Ram Prasad Khatiwada
         </p>
         <p className="quote-author opacity-0 text-sm mt-1" style={{ color: '#9ca3af' }}>
-          Owner, Karki General Store — Dharan
+          Owner, Suraj Hardware Suppliers — Itahari
         </p>
       </div>
     </section>

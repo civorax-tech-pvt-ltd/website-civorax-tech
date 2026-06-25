@@ -14,18 +14,18 @@ const channels = [
   {
     icon: MessageCircle,
     title: 'WhatsApp',
-    detail: '+977-980-0000000',
+    detail: '+977-9805309473',
     description: 'Quickest route. Our lead architects respond to operational emergencies and live build questions.',
     cta: 'OPEN CHAT',
-    href: 'https://wa.me/9779800000000',
+    href: 'https://wa.me/9779805309473',
   },
   {
     icon: Phone,
     title: 'Phone',
-    detail: '+977-980-0000000',
+    detail: '+977-9805309473',
     description: 'Direct line to the Dharan studio. Best for voice conversations and scheduled deep-dive sessions.',
     cta: 'CALL NOW',
-    href: 'tel:+9779800000000',
+    href: 'tel:+9779805309473',
   },
   {
     icon: Clock,

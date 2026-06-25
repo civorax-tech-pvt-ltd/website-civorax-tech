@@ -1,12 +1,12 @@
 const logos = [
-  'Karki General Store',
-  'Himalayan Hardware',
-  'Koshi Restaurant Group',
-  'Bagmati Logistics',
-  'Dharan Pharmacy',
-  'Eastern Textiles',
-  'Nepal Electronics',
-  'Koshi Construction',
+  'Suraj Hardware Suppliers',
+  'Muna General Store',
+  'Sanjog Restaurant & Catering',
+  'Koshi Cold Drinks & Beverages',
+  'Sunrise Pharmacy',
+  'Rai Brothers Electronics',
+  'Tamang Textile House',
+  'Purbeli Logistics',
 ]
 
 export default function TrustedBySection() {
@@ -14,7 +14,7 @@ export default function TrustedBySection() {
     <section className="py-12" style={{ backgroundColor: '#f5f5f5' }}>
       <div className="content-max-width px-4 sm:px-6 lg:px-8">
         <p className="text-sm text-center mb-6" style={{ color: '#6b7280' }}>
-          Trusted by businesses across Nepal
+          Trusted by businesses across Koshi Province
         </p>
 
         {/* Marquee Container */}

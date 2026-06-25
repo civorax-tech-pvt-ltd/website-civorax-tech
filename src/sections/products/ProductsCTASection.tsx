@@ -25,7 +25,7 @@ export default function ProductsCTASection() {
                 LET&apos;S SIT DOWN AND FIGURE OUT WHAT YOU ACTUALLY NEED.
               </p>
               <p className="mt-3 text-[22px] font-semibold" style={{ color: '#c8f07d' }}>
-                +977-980-0000000
+                +977-9805309473
               </p>
               <Link
                 to="/contact"

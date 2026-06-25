@@ -4,21 +4,18 @@ import ScrollReveal from '../../components/ScrollReveal'
 const testimonials = [
   {
     quote: "Internet drops don't stop us — transactions queue locally and sync when the connection returns. Our staff can process sales during load-shedding without any disruption.",
-    name: 'Ramesh Karki',
-    title: 'Owner, Karki General Store — Dharan',
-    image: '/assets/testimonial-ramesh.jpg',
+    name: 'Ram Prasad Khatiwada',
+    title: 'Owner, Suraj Hardware Suppliers — Itahari',
   },
   {
-    quote: 'The IRD compliance features alone saved us weeks of manual work. VAT reports generate automatically and we\'ve never had an issue with tax audits.',
-    name: 'Sita Sharma',
-    title: 'Manager, Himalayan Mart — Kathmandu',
-    image: '/assets/testimonial-sita.jpg',
+    quote: 'The IRD compliance features saved us weeks of manual work every quarter. VAT reports generate automatically and the audit XML is always ready.',
+    name: 'Sunita Rai',
+    title: 'Manager, Muna General Store — Dharan',
   },
   {
-    quote: 'We went from spreadsheets to a full ERP in under a month. The team at CivoraX understood our multi-branch challenges and built exactly what we needed.',
-    name: 'Bikash Rai',
-    title: 'Director, Koshi Logistics — Biratnagar',
-    image: '/assets/testimonial-bikash.jpg',
+    quote: 'We moved from handwritten bills to a full billing system in under three weeks. The CivoraX team knew exactly what a restaurant operation in Dharan actually needs.',
+    name: 'Bikram Limbu',
+    title: 'Owner, Sanjog Restaurant & Catering — Dharan',
   },
 ]
 
@@ -58,11 +55,14 @@ export default function TestimonialsSection() {
               />
 
               <div className="flex items-center gap-3">
-                <img
-                  src={t.image}
-                  alt={t.name}
-                  className="w-12 h-12 rounded-full object-cover"
-                />
+                <div
+                  className="w-12 h-12 rounded-full flex items-center justify-center flex-shrink-0"
+                  style={{ backgroundColor: '#f0f7e0' }}
+                >
+                  <span className="text-sm font-bold" style={{ color: '#5a7a2a' }}>
+                    {t.name.split(' ').map((n) => n[0]).join('').slice(0, 2)}
+                  </span>
+                </div>
                 <div>
                   <p className="text-[15px] font-semibold" style={{ color: '#1a1a1a' }}>
                     {t.name}

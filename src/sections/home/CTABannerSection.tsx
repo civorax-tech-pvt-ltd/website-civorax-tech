@@ -26,7 +26,7 @@ export default function CTABannerSection() {
               <ArrowRight size={16} className="transition-transform duration-300 group-hover:translate-x-1" />
             </Link>
             <p className="mt-6 text-lg font-semibold" style={{ color: '#c8f07d' }}>
-              +977-980-0000000
+              +977-9805309473
             </p>
           </div>
         </ScrollReveal>

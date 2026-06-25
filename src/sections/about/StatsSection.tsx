@@ -1,8 +1,8 @@
 import ScrollReveal from '../../components/ScrollReveal'
 
 const stats = [
-  { value: '6', label: 'ENGINEERS' },
-  { value: '3+', label: 'REGIONAL HUBS' },
+  { value: '11', label: 'ENGINEERS & STAFF' },
+  { value: '3', label: 'REGIONAL HUBS' },
   { value: '100%', label: 'IN-HOUSE CODE' },
   { value: '0', label: 'VENDOR LOCK-IN' },
 ]

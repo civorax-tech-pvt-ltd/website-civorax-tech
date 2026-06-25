@@ -136,7 +136,7 @@ export default function Footer() {
             {socialLinks.map((social) => (
               <a
                 key={social.label}
-                href={social.label === 'WhatsApp' ? 'https://wa.me/9779800000000' : '#'}
+                href={social.label === 'WhatsApp' ? 'https://wa.me/9779805309473' : '#'}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="transition-colors duration-200 hover:text-white"
@@ -154,7 +154,7 @@ export default function Footer() {
 
       {/* WhatsApp FAB */}
       <a
-        href="https://wa.me/9779800000000"
+        href="https://wa.me/9779805309473"
         target="_blank"
         rel="noopener noreferrer"
         className="fixed bottom-6 right-6 z-50 w-14 h-14 rounded-full flex items-center justify-center shadow-lg transition-transform duration-300 hover:scale-110"
