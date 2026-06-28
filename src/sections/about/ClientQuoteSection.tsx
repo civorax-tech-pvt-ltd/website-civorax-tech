@@ -33,7 +33,7 @@ export default function ClientQuoteSection() {
     <section ref={sectionRef} className="section-padding" style={{ backgroundColor: '#1a1a1a' }}>
       <div className="content-max-width max-w-[720px] mx-auto text-center">
         <p className="quote-text opacity-0 text-lg sm:text-xl italic leading-relaxed text-white">
-          &ldquo;Internet drops don&apos;t stop us — transactions queue locally and sync when the connection returns. Our staff can process sales during load-shedding without any disruption, and the IRD reports generate correctly every time.&rdquo;
+          &ldquo;Power cuts don&apos;t stop us. Sales keep running offline and sync on their own later. My staff never had to learn anything new — it just works.&rdquo;
         </p>
 
         <div
