@@ -8,11 +8,11 @@ export default function CareerHeroSection() {
   return (
     <section
       className="flex items-center justify-center text-center px-4"
-      style={{ backgroundColor: '#1a1a1a', minHeight: '80vh', paddingTop: '160px', paddingBottom: '96px' }}
+      style={{ backgroundColor: 'var(--bg-primary)', minHeight: '80vh', paddingTop: '160px', paddingBottom: '96px' }}
     >
       <div className="max-w-[720px]">
         <ScrollReveal>
-          <span className="label-text" style={{ color: '#9ca3af' }}>CAREERS</span>
+          <span className="label-text" style={{ color: 'var(--text-secondary)' }}>CAREERS</span>
         </ScrollReveal>
 
         <ScrollReveal delay={0.1}>
@@ -22,14 +22,14 @@ export default function CareerHeroSection() {
           >
             <span className="text-white">Build software that</span>
             <br />
-            <em style={{ color: '#c8f07d' }}>works under real conditions.</em>
+            <em style={{ color: 'var(--accent-light)' }}>works under real conditions.</em>
           </h1>
         </ScrollReveal>
 
         <ScrollReveal delay={0.2}>
           <p
             className="mt-6 text-base sm:text-lg leading-relaxed max-w-[560px] mx-auto"
-            style={{ color: '#9ca3af' }}
+            style={{ color: 'var(--text-secondary)' }}
           >
             We hire engineers who want to build production systems — not polished demos that break in the field. Throw your ideas into production. Be a part of it.
           </p>
@@ -39,7 +39,7 @@ export default function CareerHeroSection() {
           <Link
             href="#openings"
             className="group inline-flex items-center gap-2 text-[15px] font-semibold rounded-full transition-all duration-300 hover:scale-[1.02]"
-            style={{ backgroundColor: '#c8f07d', color: '#1a1a1a', padding: '14px 32px' }}
+            style={{ backgroundColor: 'var(--accent-light)', color: 'var(--bg-primary)', padding: '14px 32px' }}
           >
             View Openings
             <ArrowRight size={16} className="transition-transform duration-300 group-hover:translate-x-1" />
@@ -47,9 +47,9 @@ export default function CareerHeroSection() {
           <Link
             href="/contact"
             className="group inline-flex items-center gap-2 text-[15px] font-semibold text-white rounded-full transition-all duration-300"
-            style={{ backgroundColor: 'transparent', border: '1px solid #3d3d3d', padding: '14px 32px' }}
-            onMouseEnter={(e) => { e.currentTarget.style.borderColor = '#c8f07d' }}
-            onMouseLeave={(e) => { e.currentTarget.style.borderColor = '#3d3d3d' }}
+            style={{ backgroundColor: 'transparent', border: '1px solid var(--border-dark)', padding: '14px 32px' }}
+            onMouseEnter={(e) => { e.currentTarget.style.borderColor = 'var(--accent-light)' }}
+            onMouseLeave={(e) => { e.currentTarget.style.borderColor = 'var(--border-dark)' }}
           >
             Internship Track
             <ArrowRight size={16} className="transition-transform duration-300 group-hover:translate-x-1" />

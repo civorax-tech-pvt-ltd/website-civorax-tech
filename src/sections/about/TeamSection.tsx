@@ -33,12 +33,26 @@ const departments = [
         focus: 'Billing Systems · IRD Compliance · Transaction Engines',
         image: '/assets/profile_picture/anil.jpg',
       },
+            {
+        name: 'Nikesh Dhakal',
+        role: 'Backend Engineer',
+        bio: 'Works on the core billing and transaction engine. Handles IRD integration logic, VAT computation pipelines, and the audit trail systems that keep clients compliant without any manual work.',
+        focus: 'Billing Systems · IRD Compliance · Transaction Engines',
+        image: '/assets/profile_picture/nikesh.jpeg',
+      },
+
       {
         name: 'Sandip Nembang',
         role: 'Mobile Engineer',
         bio: 'Builds the Flutter-based mobile interfaces for our POS and ERP systems. Optimizes for low-end Android devices common in Koshi and Bagmati retail environments. If it needs to work on a Rs. 12,000 phone, Sandip makes it work.',
         focus: 'Flutter · Android · Low-bandwidth Mobile UI',
         image: '/assets/profile_picture/sandip.jpg',
+      },{
+        name: 'Bhuwan Dahal',
+        role: 'Flutter Developer',
+        bio: 'Builds the Flutter-based mobile interfaces for our POS and ERP systems. Optimizes for low-end Android devices common in Koshi and Bagmati retail environments. If it needs to work on a Rs. 12,000 phone, Sandip makes it work.',
+        focus: 'Flutter · Android · Low-bandwidth Mobile UI',
+        image: '',
       },
       {
         name: 'Dipendra Dhami',
@@ -136,11 +150,11 @@ export default function TeamSection() {
                 <div className="flex items-center gap-3 mb-2">
                   <span
                     className="inline-flex items-center gap-2 rounded-full px-4 py-1.5 label-text"
-                    style={{ backgroundColor: '#f0f7e0', color: '#5a7a2a' }}
+                    style={{ backgroundColor: 'var(--accent-badge)', color: 'var(--accent-badge-text)' }}
                   >
                     {dept.name}
                   </span>
-                  <span className="label-text" style={{ color: '#9ca3af' }}>
+                  <span className="label-text" style={{ color: 'var(--text-secondary)' }}>
                     {dept.members.length} {dept.members.length === 1 ? 'member' : 'members'}
                   </span>
                 </div>
@@ -155,12 +169,12 @@ export default function TeamSection() {
                   <div
                     key={member.name}
                     className="rounded-2xl p-8 transition-all duration-300 hover:-translate-y-1"
-                    style={{ backgroundColor: '#f5f5f5' }}
+                    style={{ backgroundColor: 'var(--bg-light)' }}
                   >
                     <div className="flex items-center gap-4 mb-5">
                       <div
                         className="w-24 h-24 rounded-full flex items-center justify-center flex-shrink-0 overflow-hidden"
-                        style={{ backgroundColor: '#e8f5e0' }}
+                        style={{ backgroundColor: 'var(--accent-check)' }}
                       >
                         {'image' in member && member.image ? (
                           <img
@@ -169,31 +183,31 @@ export default function TeamSection() {
                             className="w-full h-full object-cover rounded-full"
                           />
                         ) : (
-                          <span className="text-lg font-bold" style={{ color: '#5a7a2a' }}>
+                          <span className="text-lg font-bold" style={{ color: 'var(--accent-badge-text)' }}>
                             {getInitials(member.name)}
                           </span>
                         )}
                       </div>
                       <div>
-                        <h3 className="text-lg font-semibold" style={{ color: '#1a1a1a' }}>
+                        <h3 className="text-lg font-semibold" style={{ color: 'var(--bg-primary)' }}>
                           {member.name}
                         </h3>
-                        <p className="label-text" style={{ color: '#6b7280', fontSize: '11px' }}>
+                        <p className="label-text" style={{ color: 'var(--text-body)', fontSize: '11px' }}>
                           {member.role}
                         </p>
                       </div>
                     </div>
 
-                    <div className="my-4 h-px" style={{ backgroundColor: '#e5e5e5' }} />
+                    <div className="my-4 h-px" style={{ backgroundColor: 'var(--border-light)' }} />
 
-                    <p className="text-sm leading-relaxed" style={{ color: '#6b7280' }}>
+                    <p className="text-sm leading-relaxed" style={{ color: 'var(--text-body)' }}>
                       {member.bio}
                     </p>
 
-                    <p className="label-text mt-4" style={{ color: '#9ca3af', fontSize: '10px' }}>
+                    <p className="label-text mt-4" style={{ color: 'var(--text-secondary)', fontSize: '10px' }}>
                       FOCUS
                     </p>
-                    <p className="text-[13px] font-medium mt-1" style={{ color: '#1a1a1a' }}>
+                    <p className="text-[13px] font-medium mt-1" style={{ color: 'var(--bg-primary)' }}>
                       {member.focus}
                     </p>
                   </div>

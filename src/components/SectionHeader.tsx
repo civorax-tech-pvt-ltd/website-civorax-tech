@@ -17,17 +17,17 @@ export default function SectionHeader({
     <div className={`${align === 'center' ? 'text-center' : 'text-left'}`}>
       <span
         className="label-text inline-flex items-center gap-2"
-        style={{ color: light ? '#c8f07d' : '#8ab53d' }}
+        style={{ color: light ? 'var(--accent-light)' : 'var(--accent-dark)' }}
       >
         <span
           className="inline-block w-1.5 h-1.5 rounded-full"
-          style={{ backgroundColor: light ? '#c8f07d' : '#8ab53d' }}
+          style={{ backgroundColor: light ? 'var(--accent-light)' : 'var(--accent-dark)' }}
         />
         {label}
       </span>
       <h2
         className="mt-4 text-3xl md:text-[42px] font-bold leading-tight"
-        style={{ color: light ? '#ffffff' : '#1a1a1a', letterSpacing: '-0.01em' }}
+        style={{ color: light ? 'var(--text-white)' : 'var(--bg-primary)', letterSpacing: '-0.01em' }}
       >
         {heading}
       </h2>
@@ -35,7 +35,7 @@ export default function SectionHeader({
         <p
           className="mt-4 text-base leading-relaxed max-w-xl"
           style={{
-            color: light ? '#9ca3af' : '#6b7280',
+            color: light ? 'var(--text-secondary)' : 'var(--text-body)',
             margin: align === 'center' ? '16px auto 0' : '16px 0 0',
           }}
         >

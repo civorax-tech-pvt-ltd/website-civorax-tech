@@ -1,4 +1,6 @@
-import { Users, Target } from 'lucide-react'
+'use client'
+
+import { Users, Target, Code2, MapPin, Zap, Heart } from 'lucide-react'
 import ScrollReveal from '../../components/ScrollReveal'
 
 const values = [
@@ -6,48 +8,89 @@ const values = [
     icon: Users,
     title: 'Direct Mentorship',
     description: 'Work directly with senior engineers. No layers of management between you and the work.',
+    tag: 'Growth',
+    accent: '#365314',
   },
   {
     icon: Target,
     title: 'Meaningful Impact',
     description: 'Your code keeps shops running during load-shedding. Real consequences, real satisfaction.',
+    tag: 'Purpose',
+    accent: '#84cc16',
+  },
+  {
+    icon: Code2,
+    title: 'Production Over Demos',
+    description: 'We ship code that runs in real shops, not polished prototypes that break in the field.',
+    tag: 'Engineering',
+    accent: '#65a30d',
+  },
+  {
+    icon: MapPin,
+    title: 'Local Roots',
+    description: 'Built in Dharan for Koshi Province. If you\'re from here, you understand the problems we solve.',
+    tag: 'Community',
+    accent: '#4d7c0f',
+  },
+  {
+    icon: Zap,
+    title: 'Move Fast, Stay Solid',
+    description: 'Weeks, not months. We deploy quickly but never cut corners on reliability.',
+    tag: 'Speed',
+    accent: '#a3e635',
+  },
+  {
+    icon: Heart,
+    title: 'Own What You Build',
+    description: 'Full source ownership for clients means your work has lasting value, not vendor lock-in.',
+    tag: 'Ownership',
+    accent: '#365314',
   },
 ]
 
 export default function CultureSection() {
   return (
     <section className="section-padding bg-white">
-      <div className="content-max-width max-w-[800px] mx-auto text-center">
+      <div className="content-max-width">
         <ScrollReveal>
-          <span className="label-text" style={{ color: '#8ab53d' }}>WHY CIVORAX</span>
-          <h2 className="mt-4 text-3xl md:text-[42px] font-bold leading-tight" style={{ color: '#1a1a1a', letterSpacing: '-0.01em' }}>
-            We don&apos;t chase trends.
-          </h2>
-        </ScrollReveal>
-
-        <ScrollReveal delay={0.1}>
-          <div className="mt-6 space-y-4 text-base leading-relaxed" style={{ color: '#6b7280' }}>
-            <p>
-              We build offline-first systems that survive Nepal&apos;s real infrastructure — intermittent power, unreliable internet, and IRD compliance requirements that most software ignores entirely.
-            </p>
-            <p>
-              If you are from Dharan, Itahari, Biratnagar, or anywhere in Koshi Province and you want to build software that your own community actually uses, this is that place.
+          <div className="text-center max-w-[720px] mx-auto">
+            <span className="label-text" style={{ color: 'var(--accent-dark)' }}>WHY CIVORAX</span>
+            <h2 className="mt-4 text-3xl md:text-[42px] font-bold leading-tight" style={{ color: 'var(--bg-primary)', letterSpacing: '-0.01em' }}>
+              We don&apos;t chase trends.
+            </h2>
+            <p className="mt-4 text-base leading-relaxed" style={{ color: 'var(--text-body)' }}>
+              We build offline-first systems that survive Nepal&apos;s real infrastructure. If you want to build software your own community actually uses, this is that place.
             </p>
           </div>
         </ScrollReveal>
 
-        <ScrollReveal stagger={0.12} className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-12 text-left">
+        <ScrollReveal stagger={0.12} className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-16">
           {values.map((v) => (
             <div
               key={v.title}
-              className="rounded-2xl p-8 transition-all duration-300 hover:-translate-y-1"
+              className="rounded-2xl p-8 transition-all duration-300 hover:-translate-y-1 cursor-pointer"
               style={{ backgroundColor: '#f5f5f5' }}
+              onMouseEnter={(e) => { (e.currentTarget as HTMLDivElement).style.boxShadow = '0 8px 24px rgba(54,83,20,0.12)' }}
+              onMouseLeave={(e) => { (e.currentTarget as HTMLDivElement).style.boxShadow = 'none' }}
             >
-              <v.icon size={28} style={{ color: '#8ab53d' }} />
-              <h3 className="mt-4 text-[22px] font-semibold" style={{ color: '#1a1a1a' }}>
+              <div className="flex items-center gap-3 mb-4">
+                <div
+                  className="w-10 h-10 rounded-full flex items-center justify-center flex-shrink-0"
+                  style={{ backgroundColor: v.accent }}
+                >
+                  <v.icon size={18} color="#fff" />
+                </div>
+                <span
+                  className="text-xs font-medium px-2.5 py-1 rounded-full"
+                  style={{ backgroundColor: `${v.accent}18`, color: v.accent }}
+                >
+                  {v.tag}
+                </span>
+              </div>
+              <h3 className="text-lg font-semibold leading-snug" style={{ color: 'var(--bg-primary)' }}>
                 {v.title}
               </h3>
-              <p className="mt-2 text-sm leading-relaxed" style={{ color: '#6b7280' }}>
+              <p className="mt-2 text-[15px] leading-relaxed" style={{ color: 'var(--text-body)' }}>
                 {v.description}
               </p>
             </div>

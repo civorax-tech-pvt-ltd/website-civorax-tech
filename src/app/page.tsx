@@ -1,8 +1,9 @@
 import HeroSection from '@/sections/home/HeroSection'
 import TrustedBySection from '@/sections/home/TrustedBySection'
 import HowItWorksSection from '@/sections/home/HowItWorksSection'
-import KeyFeaturesSection from '@/sections/home/KeyFeaturesSection'
+import ProductsPreviewSection from '@/sections/home/ProductsPreviewSection'
 import TestimonialsSection from '@/sections/home/TestimonialsSection'
+import FAQSection from '@/sections/home/FAQSection'
 import CTABannerSection from '@/sections/home/CTABannerSection'
 
 export default function HomePage() {
@@ -10,9 +11,10 @@ export default function HomePage() {
     <>
       <HeroSection />
       <TrustedBySection />
+      <ProductsPreviewSection />
       <HowItWorksSection />
-      <KeyFeaturesSection />
       <TestimonialsSection />
+      <FAQSection />
       <CTABannerSection />
     </>
   )

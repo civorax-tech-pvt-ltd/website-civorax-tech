@@ -1,95 +1,102 @@
-import { Check, ArrowRight } from 'lucide-react'
+'use client'
+
+import { ArrowRight } from 'lucide-react'
 import SectionHeader from '../../components/SectionHeader'
 import ScrollReveal from '../../components/ScrollReveal'
 import Link from 'next/link'
+import { Card, CardHeader, CardTitle, CardDescription, CardContent, CardFooter } from '../../components/ui/card'
 
 const products = [
   {
-    badge: 'PROPRIETARY POS ENGINE',
-    title: 'CivoraX Retail POS Client',
-    description: 'Perfectly suited for local supermarkets, hardware warehouses, and restaurant groups. Links physical receipt printers, payment drawers, and barcode scanners directly via browser USB endpoints without native binary wrappers.',
+    slug: 'civorax-retail-pos',
+    title: 'CivoraX Retail POS',
+    description: 'For supermarkets, hardware stores, and restaurant groups. Connects receipt printers, payment drawers, and barcode scanners directly, no extra software installs needed.',
     features: [
-      { label: 'Thermal Raw API', detail: 'ESC/POS Printer Ready' },
-      { label: 'Dual-Sync', detail: 'Cloud / Local replicas' },
-      { label: 'Dynamic VAT logs', detail: 'Instant audit XMLs' },
-      { label: 'Barcode Parser', detail: 'USB/BT Native listeners' },
+      'ESC/POS printer support',
+      'Works offline, syncs when connection returns',
+      'Automatic VAT logs and audit-ready reports',
+      'Barcode scanner support (USB/Bluetooth)',
     ],
-    cta: 'Schedule POS audit demo',
+    cta: 'Talk to us about POS',
   },
   {
-    badge: 'REGIONAL ERP FRAMEWORK',
-    title: 'CivoraX Core ERP Console',
-    description: 'Aggregate raw material ledgers and branches under a single pane of glass. Optimize stock movements, track distribution channels, and access real-time metrics across your branches.',
+    slug: 'civorax-core-erp',
+    title: 'CivoraX Core ERP',
+    description: 'One dashboard for all your branches. Track inventory, monitor performance, and manage distribution from a single view.',
     features: [
-      { label: 'Branch Performance Monitor', detail: 'Live Telemetry' },
-      { label: 'Live Inventory Tracking', detail: 'Real-time stock levels' },
-      { label: 'Multi-Province Sync', detail: 'Cross-branch consistency' },
-      { label: 'IRD Report Automation', detail: 'One-click compliance' },
+      'Live inventory tracking',
+      'Multi-branch sync',
+      'One-click IRD compliance reports',
     ],
     cta: 'Get in touch',
+  },
+  {
+    slug: 'custom-web-apps',
+    title: 'Custom Websites & Web Apps',
+    description: 'Business websites, client portals, and internal tools — built clean, fast, and made to grow with you. No templates, no bloated page builders.',
+    features: [
+      'SEO-friendly, fast-loading builds',
+      'Custom admin panels and dashboards',
+      'Built to integrate with your POS/ERP if needed',
+    ],
+    cta: 'Discuss your website',
   },
 ]
 
 export default function ProductCardsSection() {
   return (
-    <section className="section-padding" style={{ backgroundColor: '#f5f5f5' }}>
+    <section className="section-padding" style={{ backgroundColor: 'var(--bg-light)' }}>
       <div className="content-max-width">
         <ScrollReveal>
           <SectionHeader
             label="ENTERPRISE SOLUTIONS"
             heading="Built to manage high-volume, multi-branch complexity."
+            subheading=""
             align="left"
           />
         </ScrollReveal>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mt-12">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-12">
           {products.map((product) => (
             <ScrollReveal key={product.title}>
-              <div
-                className="bg-white rounded-2xl p-8 md:p-10 h-full transition-all duration-300 hover:-translate-y-1"
-                style={{ boxShadow: '0 2px 8px rgba(0,0,0,0.06)' }}
-              >
-                <span
-                  className="inline-block rounded-lg px-3 py-1 label-text"
-                  style={{ backgroundColor: '#f0f7e0', color: '#5a7a2a' }}
+              <Link href={`/products/${product.slug}`} className="block h-full">
+                <Card
+                  className="h-full transition-all duration-300 hover:-translate-y-1 flex flex-col"
+                  style={{ backgroundColor: '#f5f5f5', border: '1px solid var(--border-light)', boxShadow: 'none' }}
+                  onMouseEnter={(e) => { (e.currentTarget as HTMLDivElement).style.boxShadow = '0 8px 24px rgba(54,83,20,0.12)' }}
+                  onMouseLeave={(e) => { (e.currentTarget as HTMLDivElement).style.boxShadow = 'none' }}
                 >
-                  {product.badge}
-                </span>
+                  <CardHeader>
+                    <CardTitle className="text-xl font-bold" style={{ color: 'var(--bg-primary)' }}>
+                      {product.title}
+                    </CardTitle>
+                    <CardDescription className="text-[15px] leading-relaxed" style={{ color: 'var(--text-body)' }}>
+                      {product.description}
+                    </CardDescription>
+                  </CardHeader>
 
-                <h3 className="mt-4 text-xl md:text-[28px] font-bold" style={{ color: '#1a1a1a' }}>
-                  {product.title}
-                </h3>
+                  <CardContent className="flex-1">
+                    <ul className="space-y-3">
+                      {product.features.map((f) => (
+                        <li key={f} className="flex items-start gap-2.5 text-sm" style={{ color: 'var(--text-body)' }}>
+                          <span style={{ color: 'var(--accent-dark)' }} className="mt-0.5">-</span>
+                          {f}
+                        </li>
+                      ))}
+                    </ul>
+                  </CardContent>
 
-                <p className="mt-3 text-base leading-relaxed" style={{ color: '#6b7280' }}>
-                  {product.description}
-                </p>
-
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-8">
-                  {product.features.map((f) => (
-                    <div key={f.label} className="flex items-start gap-3">
-                      <div
-                        className="w-5 h-5 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5"
-                        style={{ backgroundColor: '#e8f5e0' }}
-                      >
-                        <Check size={12} style={{ color: '#4ecdc4' }} />
-                      </div>
-                      <div>
-                        <p className="text-sm font-medium" style={{ color: '#1a1a1a' }}>{f.label}</p>
-                        <p className="text-xs" style={{ color: '#6b7280' }}>{f.detail}</p>
-                      </div>
-                    </div>
-                  ))}
-                </div>
-
-                <Link
-                  href="/contact"
-                  className="group inline-flex items-center gap-1 mt-8 label-text transition-colors duration-200 hover:text-[#8ab53d]"
-                  style={{ color: '#1a1a1a' }}
-                >
-                  {product.cta}
-                  <ArrowRight size={12} className="transition-transform duration-300 group-hover:translate-x-1" />
-                </Link>
-              </div>
+                  <CardFooter>
+                    <span
+                      className="group inline-flex items-center gap-1 label-text transition-colors duration-200"
+                      style={{ color: 'var(--accent-dark)' }}
+                    >
+                      {product.cta}
+                      <ArrowRight size={12} className="transition-transform duration-300 group-hover:translate-x-1" />
+                    </span>
+                  </CardFooter>
+                </Card>
+              </Link>
             </ScrollReveal>
           ))}
         </div>

@@ -55,7 +55,7 @@ export default function Header() {
             <span
               className="text-xl font-bold"
               style={{
-                color: '#c8f07d',
+                color: 'var(--accent)',
                 clipPath: 'polygon(15% 0%, 100% 0%, 85% 100%, 0% 100%)',
                 padding: '0 6px',
                 marginLeft: '2px',
@@ -73,7 +73,7 @@ export default function Header() {
                 href={link.path}
                 className="relative text-[15px] font-medium transition-opacity duration-200"
                 style={{
-                  color: pathname === link.path ? '#ffffff' : 'rgba(255,255,255,0.7)',
+                  color: pathname === link.path ? 'var(--text-white)' : 'rgba(255,255,255,0.7)',
                   opacity: pathname === link.path ? 1 : 0.7,
                 }}
                 onMouseEnter={(e: React.MouseEvent<HTMLAnchorElement>) => { e.currentTarget.style.opacity = '1' }}
@@ -87,7 +87,7 @@ export default function Header() {
                 {pathname === link.path && (
                   <span
                     className="absolute -bottom-1 left-0 right-0 h-0.5"
-                    style={{ backgroundColor: '#c8f07d' }}
+                    style={{ backgroundColor: 'var(--accent-light)' }}
                   />
                 )}
               </Link>
@@ -99,19 +99,19 @@ export default function Header() {
             href="/contact"
             className="hidden md:inline-flex items-center gap-2 text-[15px] font-semibold text-white rounded-full transition-all duration-300 hover:gap-3"
             style={{
-              backgroundColor: scrolled ? '#1a1a1a' : 'transparent',
-              border: '1px solid #3d3d3d',
+              backgroundColor: scrolled ? 'var(--bg-primary)' : 'transparent',
+              border: '1px solid var(--border-dark)',
               padding: '10px 24px',
             }}
             onMouseEnter={(e: React.MouseEvent<HTMLAnchorElement>) => {
-              e.currentTarget.style.backgroundColor = '#c8f07d'
-              e.currentTarget.style.color = '#1a1a1a'
-              e.currentTarget.style.borderColor = '#c8f07d'
+              e.currentTarget.style.backgroundColor = 'var(--accent-light)'
+              e.currentTarget.style.color = 'var(--bg-primary)'
+              e.currentTarget.style.borderColor = 'var(--accent-light)'
             }}
             onMouseLeave={(e: React.MouseEvent<HTMLAnchorElement>) => {
-              e.currentTarget.style.backgroundColor = scrolled ? '#1a1a1a' : 'transparent'
-              e.currentTarget.style.color = '#ffffff'
-              e.currentTarget.style.borderColor = '#3d3d3d'
+              e.currentTarget.style.backgroundColor = scrolled ? 'var(--bg-primary)' : 'transparent'
+              e.currentTarget.style.color = 'var(--text-white)'
+              e.currentTarget.style.borderColor = 'var(--border-dark)'
             }}
           >
             Get In Touch
@@ -141,7 +141,7 @@ export default function Header() {
               href={link.path}
               className="text-2xl font-semibold transition-colors duration-200"
               style={{
-                color: pathname === link.path ? '#c8f07d' : '#ffffff',
+                color: pathname === link.path ? 'var(--accent-light)' : 'var(--text-white)',
               }}
               onClick={() => setMobileOpen(false)}
             >
@@ -151,7 +151,7 @@ export default function Header() {
           <Link
             href="/contact"
             className="mt-4 inline-flex items-center gap-2 text-lg font-semibold rounded-full px-8 py-3"
-            style={{ backgroundColor: '#c8f07d', color: '#1a1a1a' }}
+            style={{ backgroundColor: 'var(--accent-light)', color: 'var(--bg-primary)' }}
             onClick={() => setMobileOpen(false)}
           >
             Get In Touch

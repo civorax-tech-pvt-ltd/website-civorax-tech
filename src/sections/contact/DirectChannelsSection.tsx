@@ -38,14 +38,14 @@ const channels = [
 
 export default function DirectChannelsSection() {
   return (
-    <section className="section-padding" style={{ backgroundColor: '#f5f5f5' }}>
+    <section className="section-padding" style={{ backgroundColor: 'var(--bg-light)' }}>
       <div className="content-max-width">
         <ScrollReveal>
-          <span className="label-text" style={{ color: '#8ab53d' }}>DIRECT CHANNELS</span>
-          <h2 className="mt-4 text-3xl md:text-[42px] font-bold leading-tight" style={{ color: '#1a1a1a', letterSpacing: '-0.01em' }}>
+          <span className="label-text" style={{ color: 'var(--accent-dark)' }}>DIRECT CHANNELS</span>
+          <h2 className="mt-4 text-3xl md:text-[42px] font-bold leading-tight" style={{ color: 'var(--bg-primary)', letterSpacing: '-0.01em' }}>
             Prefer to reach us directly?
           </h2>
-          <p className="mt-3 text-base leading-relaxed max-w-[560px]" style={{ color: '#6b7280' }}>
+          <p className="mt-3 text-base leading-relaxed max-w-[560px]" style={{ color: 'var(--text-body)' }}>
             Four direct lines into the studio. Pick the channel that matches the urgency of your inquiry.
           </p>
         </ScrollReveal>
@@ -55,22 +55,22 @@ export default function DirectChannelsSection() {
             <div
               key={ch.title}
               className="bg-white rounded-2xl p-8 transition-all duration-300 hover:-translate-y-1"
-              style={{ border: '1px solid #e5e5e5' }}
+              style={{ border: '1px solid var(--border-light)' }}
             >
               <div
                 className="w-12 h-12 rounded-xl flex items-center justify-center"
-                style={{ backgroundColor: '#f0f7e0' }}
+                style={{ backgroundColor: 'var(--accent-badge)' }}
               >
-                <ch.icon size={22} style={{ color: '#8ab53d' }} />
+                <ch.icon size={22} style={{ color: 'var(--accent-dark)' }} />
               </div>
 
-              <h3 className="mt-5 text-[22px] font-semibold" style={{ color: '#1a1a1a' }}>
+              <h3 className="mt-5 text-[22px] font-semibold" style={{ color: 'var(--bg-primary)' }}>
                 {ch.title}
               </h3>
-              <p className="mt-2 text-sm font-medium" style={{ color: '#1a1a1a' }}>
+              <p className="mt-2 text-sm font-medium" style={{ color: 'var(--bg-primary)' }}>
                 {ch.detail}
               </p>
-              <p className="mt-2 text-[13px] leading-relaxed" style={{ color: '#6b7280' }}>
+              <p className="mt-2 text-[13px] leading-relaxed" style={{ color: 'var(--text-body)' }}>
                 {ch.description}
               </p>
 
@@ -79,8 +79,8 @@ export default function DirectChannelsSection() {
                   href={ch.href}
                   target={ch.href.startsWith('http') ? '_blank' : undefined}
                   rel={ch.href.startsWith('http') ? 'noopener noreferrer' : undefined}
-                  className="group inline-flex items-center gap-1 mt-5 label-text transition-colors duration-200 hover:text-[#8ab53d]"
-                  style={{ color: '#1a1a1a' }}
+                  className="group inline-flex items-center gap-1 mt-5 label-text transition-colors duration-200 hover:text-accent-dark"
+                  style={{ color: 'var(--bg-primary)' }}
                 >
                   {ch.cta}
                   <ArrowRight size={12} className="transition-transform duration-300 group-hover:translate-x-1" />
@@ -89,8 +89,8 @@ export default function DirectChannelsSection() {
 
               {ch.status && (
                 <div className="mt-5 flex items-center gap-2">
-                  <span className="w-1.5 h-1.5 rounded-full" style={{ backgroundColor: '#4ecdc4' }} />
-                  <span className="label-text" style={{ color: '#4ecdc4' }}>{ch.status}</span>
+                  <span className="w-1.5 h-1.5 rounded-full" style={{ backgroundColor: 'var(--teal)' }} />
+                  <span className="label-text" style={{ color: 'var(--teal)' }}>{ch.status}</span>
                 </div>
               )}
             </div>

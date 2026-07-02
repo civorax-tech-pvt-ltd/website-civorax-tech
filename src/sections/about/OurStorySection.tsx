@@ -8,14 +8,14 @@ export default function OurStorySection() {
           {/* Text */}
           <div>
             <ScrollReveal>
-              <span className="label-text" style={{ color: '#8ab53d' }}>OUR STORY</span>
-              <h2 className="mt-4 text-3xl md:text-[42px] font-bold leading-tight" style={{ color: '#1a1a1a', letterSpacing: '-0.01em' }}>
+              <span className="label-text" style={{ color: 'var(--accent-dark)' }}>OUR STORY</span>
+              <h2 className="mt-4 text-3xl md:text-[42px] font-bold leading-tight" style={{ color: 'var(--bg-primary)', letterSpacing: '-0.01em' }}>
                 How We Started
               </h2>
             </ScrollReveal>
 
             <ScrollReveal delay={0.1}>
-              <div className="mt-6 space-y-4 text-base leading-relaxed" style={{ color: '#6b7280' }}>
+              <div className="mt-6 space-y-4 text-base leading-relaxed" style={{ color: 'var(--text-body)' }}>
                 <p>
                   CivoraX was founded in 2026 in Dharan by Dheeraj Uparkoti and a group of engineers who grew up watching businesses in Koshi Province struggle with software that assumed perfect conditions — stable internet, reliable power, and IT staff who could troubleshoot on the fly.
                 </p>
