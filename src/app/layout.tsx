@@ -2,10 +2,28 @@ import type { Metadata } from 'next'
 import './globals.css'
 import Header from '../components/Header'
 import Footer from '../components/Footer'
+import BackToTop from '../components/BackToTop'
+import PageTransition from '../components/PageTransition'
 
 export const metadata: Metadata = {
-  title: 'CivoraX — Software Engineering Studio, Dharan, Nepal',
+  title: {
+    default: 'CivoraX — Software Engineering Studio, Dharan, Nepal',
+    template: '%s | CivoraX',
+  },
   description: 'CivoraX Tech Pvt. Ltd. builds offline POS systems, ERPs, and web portals from Dharan, Nepal.',
+  metadataBase: new URL('https://civorax.com.np'),
+  openGraph: {
+    type: 'website',
+    locale: 'en_US',
+    siteName: 'CivoraX Tech',
+    title: 'CivoraX — Software Engineering Studio, Dharan, Nepal',
+    description: 'Offline POS systems, ERPs, and web portals built in Dharan, Nepal. Production-grade software for businesses that need reliability.',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'CivoraX — Software Engineering Studio, Dharan, Nepal',
+    description: 'Offline POS systems, ERPs, and web portals built in Dharan, Nepal.',
+  },
   icons: {
     icon: [
       { url: '/favicon/favicon-16x16.png', sizes: '16x16', type: 'image/png' },
@@ -35,10 +53,19 @@ export default function RootLayout({
         />
       </head>
       <body>
+        <a
+          href="#main-content"
+          className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[100] focus:rounded-md focus:px-4 focus:py-2 focus:text-sm focus:font-medium focus:bg-lime-500 focus:text-white"
+        >
+          Skip to content
+        </a>
         <div className="min-h-screen bg-white">
           <Header />
-          <main>{children}</main>
+          <main id="main-content">
+            <PageTransition>{children}</PageTransition>
+          </main>
           <Footer />
+          <BackToTop />
         </div>
       </body>
     </html>

@@ -130,35 +130,46 @@ export default function Header() {
       </header>
 
       {/* Mobile Overlay */}
-      {mobileOpen && (
-        <div
-          className="fixed inset-0 z-40 flex flex-col items-center justify-center gap-8 md:hidden"
-          style={{ backgroundColor: 'rgba(26,26,26,0.98)' }}
-        >
-          {navLinks.map((link) => (
-            <Link
-              key={link.path}
-              href={link.path}
-              className="text-2xl font-semibold transition-colors duration-200"
-              style={{
-                color: pathname === link.path ? 'var(--accent-light)' : 'var(--text-white)',
-              }}
-              onClick={() => setMobileOpen(false)}
-            >
-              {link.label}
-            </Link>
-          ))}
+      <div
+        className="fixed inset-0 z-40 flex flex-col items-center justify-center gap-8 md:hidden transition-all duration-300"
+        style={{
+          backgroundColor: 'rgba(26,26,26,0.98)',
+          opacity: mobileOpen ? 1 : 0,
+          pointerEvents: mobileOpen ? 'auto' : 'none',
+        }}
+      >
+        {navLinks.map((link, i) => (
           <Link
-            href="/contact"
-            className="mt-4 inline-flex items-center gap-2 text-lg font-semibold rounded-full px-8 py-3"
-            style={{ backgroundColor: 'var(--accent-light)', color: 'var(--bg-primary)' }}
+            key={link.path}
+            href={link.path}
+            className="text-2xl font-semibold transition-all duration-300"
+            style={{
+              color: pathname === link.path ? 'var(--accent-light)' : 'var(--text-white)',
+              transform: mobileOpen ? 'translateY(0)' : 'translateY(12px)',
+              opacity: mobileOpen ? 1 : 0,
+              transitionDelay: mobileOpen ? `${i * 60}ms` : '0ms',
+            }}
             onClick={() => setMobileOpen(false)}
           >
-            Get In Touch
-            <ArrowRight size={18} />
+            {link.label}
           </Link>
-        </div>
-      )}
+        ))}
+        <Link
+          href="/contact"
+          className="mt-4 inline-flex items-center gap-2 text-lg font-semibold rounded-full px-8 py-3 transition-all duration-300"
+          style={{
+            backgroundColor: 'var(--accent-light)',
+            color: 'var(--bg-primary)',
+            transform: mobileOpen ? 'translateY(0)' : 'translateY(12px)',
+            opacity: mobileOpen ? 1 : 0,
+            transitionDelay: mobileOpen ? `${navLinks.length * 60}ms` : '0ms',
+          }}
+          onClick={() => setMobileOpen(false)}
+        >
+          Get In Touch
+          <ArrowRight size={18} />
+        </Link>
+      </div>
     </>
   )
 }

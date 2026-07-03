@@ -194,8 +194,7 @@ export default function HeroSection() {
 
               </span>
               <span className="hero-headline-2 opacity-0 block">
-                <em className="not-italic" style={{ color: 'var(--accent-light)' }}>  </em>
-                <span className="text-white">  </span>
+                <em className="not-italic" style={{ color: 'var(--accent-light)' }}>Built for Nepal.</em>
               </span>
             </h1>
 

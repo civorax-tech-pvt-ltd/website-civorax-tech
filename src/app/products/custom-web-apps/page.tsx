@@ -1,10 +1,15 @@
-import { ArrowRight } from 'lucide-react'
+import { ArrowRight, ChevronRight } from 'lucide-react'
 import Link from 'next/link'
 import type { Metadata } from 'next'
+import WebAppsMockup from '../../../components/mockups/WebAppsMockup'
 
 export const metadata: Metadata = {
-  title: 'Custom Websites & Web Apps — CivoraX',
+  title: 'Custom Websites & Web Apps',
   description: 'Business websites, client portals, and internal tools — built clean, fast, and made to grow with you.',
+  openGraph: {
+    title: 'Custom Web Apps — CivoraX',
+    description: 'Business websites, client portals, and internal tools — built clean, fast, and made to grow with you.',
+  },
 }
 
 const features = [
@@ -52,6 +57,14 @@ export default function WebAppsProductPage() {
         style={{ backgroundColor: 'var(--bg-primary)', minHeight: '60vh', paddingTop: '160px', paddingBottom: '80px' }}
       >
         <div className="max-w-[720px] mx-auto">
+          {/* Breadcrumbs */}
+          <nav className="flex items-center justify-center gap-1.5 text-xs mb-6" style={{ color: 'var(--text-secondary)' }}>
+            <Link href="/" className="hover:text-white transition-colors">Home</Link>
+            <ChevronRight size={12} />
+            <Link href="/products" className="hover:text-white transition-colors">Products</Link>
+            <ChevronRight size={12} />
+            <span style={{ color: 'var(--accent-light)' }}>Custom Web Apps</span>
+          </nav>
           <span className="label-text" style={{ color: 'var(--text-secondary)' }}>WEB DEVELOPMENT</span>
           <h1
             className="mt-4 text-4xl sm:text-5xl md:text-[56px] font-bold leading-[1.1]"
@@ -84,6 +97,7 @@ export default function WebAppsProductPage() {
               All products
             </Link>
           </div>
+          <WebAppsMockup />
         </div>
       </section>
 

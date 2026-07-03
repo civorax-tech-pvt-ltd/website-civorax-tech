@@ -1,10 +1,15 @@
-import { Check, ArrowRight } from 'lucide-react'
+import { Check, ArrowRight, ChevronRight } from 'lucide-react'
 import Link from 'next/link'
 import type { Metadata } from 'next'
+import POSMockup from '../../../components/mockups/POSMockup'
 
 export const metadata: Metadata = {
-  title: 'CivoraX Retail POS — CivoraX',
+  title: 'CivoraX Retail POS',
   description: 'Offline-first POS system for supermarkets, hardware stores, and restaurant groups. ESC/POS printer support, barcode scanning, and IRD-compliant VAT logging.',
+  openGraph: {
+    title: 'CivoraX Retail POS — Offline-First Billing',
+    description: 'Offline-first POS for supermarkets, hardware stores, and restaurant groups. ESC/POS printer support, barcode scanning, and IRD-compliant VAT logging.',
+  },
 }
 
 const features = [
@@ -52,6 +57,14 @@ export default function POSProductPage() {
         style={{ backgroundColor: 'var(--bg-primary)', minHeight: '60vh', paddingTop: '160px', paddingBottom: '80px' }}
       >
         <div className="max-w-[720px] mx-auto">
+          {/* Breadcrumbs */}
+          <nav className="flex items-center justify-center gap-1.5 text-xs mb-6" style={{ color: 'var(--text-secondary)' }}>
+            <Link href="/" className="hover:text-white transition-colors">Home</Link>
+            <ChevronRight size={12} />
+            <Link href="/products" className="hover:text-white transition-colors">Products</Link>
+            <ChevronRight size={12} />
+            <span style={{ color: 'var(--accent-light)' }}>Retail POS</span>
+          </nav>
           <span className="label-text" style={{ color: 'var(--text-secondary)' }}>RETAIL POS</span>
           <h1
             className="mt-4 text-4xl sm:text-5xl md:text-[56px] font-bold leading-[1.1]"
@@ -84,6 +97,7 @@ export default function POSProductPage() {
               All products
             </Link>
           </div>
+          <POSMockup />
         </div>
       </section>
 

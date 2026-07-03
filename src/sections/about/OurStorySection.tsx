@@ -1,3 +1,4 @@
+import Image from 'next/image'
 import ScrollReveal from '../../components/ScrollReveal'
 
 export default function OurStorySection() {
@@ -34,9 +35,11 @@ export default function OurStorySection() {
 
           {/* Image */}
           <ScrollReveal delay={0.15}>
-            <img
+            <Image
               src="/assets/team-office.jpg"
               alt="CivoraX team working in their Dharan office"
+              width={800}
+              height={600}
               className="w-full rounded-2xl object-cover aspect-[4/3]"
             />
           </ScrollReveal>

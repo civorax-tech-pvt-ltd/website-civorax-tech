@@ -1,3 +1,4 @@
+import Image from 'next/image'
 import SectionHeader from '../../components/SectionHeader'
 import ScrollReveal from '../../components/ScrollReveal'
 import { Quote } from 'lucide-react'
@@ -10,6 +11,7 @@ const testimonials = [
     business: 'Sanjog Restaurant & Catering',
     location: 'Dharan',
     badge: 'RESTAURANT',
+    image: '/assets/testimonial-bikash.jpg',
   },
   {
     quote: 'Load-shedding used to mean lost sales. Now the POS works offline and syncs everything when power returns. We haven\'t lost a single transaction in four months.',
@@ -18,6 +20,7 @@ const testimonials = [
     business: 'Suraj Hardware Suppliers',
     location: 'Itahari',
     badge: 'HARDWARE',
+    image: '/assets/testimonial-ramesh.jpg',
   },
   {
     quote: 'The IRD compliance alone saved us weeks of manual reporting. VAT XML generation used to be our biggest headache — now it\'s one click.',
@@ -26,6 +29,7 @@ const testimonials = [
     business: 'Muna General Store',
     location: 'Dharan',
     badge: 'RETAIL',
+    image: '/assets/testimonial-sita.jpg',
   },
 ]
 
@@ -94,10 +98,22 @@ export default function TestimonialsSection() {
                 {/* Author */}
                 <div className="flex items-center gap-3">
                   <div
-                    className="w-10 h-10 rounded-full flex items-center justify-center flex-shrink-0 text-sm font-bold"
-                    style={{ backgroundColor: 'var(--accent-badge)', color: 'var(--accent-badge-text)' }}
+                    className="w-10 h-10 rounded-full flex items-center justify-center flex-shrink-0 overflow-hidden"
+                    style={{ backgroundColor: 'var(--accent-badge)' }}
                   >
-                    {t.name.split(' ').map((n) => n[0]).join('')}
+                    {t.image ? (
+                      <Image
+                        src={t.image}
+                        alt={t.name}
+                        width={40}
+                        height={40}
+                        className="w-full h-full object-cover rounded-full"
+                      />
+                    ) : (
+                      <span className="text-sm font-bold" style={{ color: 'var(--accent-badge-text)' }}>
+                        {t.name.split(' ').map((n) => n[0]).join('')}
+                      </span>
+                    )}
                   </div>
                   <div>
                     <p className="text-sm font-semibold" style={{ color: 'var(--bg-primary)' }}>

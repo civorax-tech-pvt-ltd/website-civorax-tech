@@ -1,6 +1,6 @@
 'use client'
 
-import { ArrowRight } from 'lucide-react'
+import { ArrowRight, Check } from 'lucide-react'
 import SectionHeader from '../../components/SectionHeader'
 import ScrollReveal from '../../components/ScrollReveal'
 import Link from 'next/link'
@@ -79,7 +79,7 @@ export default function ProductCardsSection() {
                     <ul className="space-y-3">
                       {product.features.map((f) => (
                         <li key={f} className="flex items-start gap-2.5 text-sm" style={{ color: 'var(--text-body)' }}>
-                          <span style={{ color: 'var(--accent-dark)' }} className="mt-0.5">-</span>
+                          <Check size={16} className="mt-0.5 flex-shrink-0" style={{ color: 'var(--accent-dark)' }} />
                           {f}
                         </li>
                       ))}
