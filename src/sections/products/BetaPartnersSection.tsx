@@ -8,11 +8,11 @@ const partners = [
 
 export default function BetaPartnersSection() {
   return (
-    <section className="section-padding" style={{ backgroundColor: 'var(--bg-light)' }}>
+    <section className="section-padding bg-bg-light">
       <div className="content-max-width">
         <ScrollReveal>
-          <span className="label-text" style={{ color: 'var(--accent-dark)' }}>BETA PARTNERS</span>
-          <h2 className="mt-4 text-3xl md:text-[42px] font-bold leading-tight" style={{ color: 'var(--bg-primary)', letterSpacing: '-0.01em' }}>
+          <span className="label-text text-accent-dark">BETA PARTNERS</span>
+          <h2 className="mt-4 text-3xl md:text-[42px] font-bold leading-tight text-text-primary tracking-tight">
             Currently running with:
           </h2>
         </ScrollReveal>
@@ -21,17 +21,16 @@ export default function BetaPartnersSection() {
           {partners.map((partner) => (
             <div
               key={partner.name}
-              className="bg-white rounded-2xl p-8 transition-all duration-300 hover:-translate-y-1"
-              style={{ border: '1px solid var(--border-light)' }}
+              className="bg-white dark:bg-bg-primary rounded-2xl p-8 transition-all duration-300 hover:-translate-y-1 border border-border-light"
             >
               <div className="flex items-center gap-3 mb-4">
-                <span className="w-2.5 h-2.5 rounded-full" style={{ backgroundColor: 'var(--teal)' }} />
-                <span className="label-text" style={{ color: 'var(--teal)' }}>ACTIVE BETA</span>
+                <span className="w-2.5 h-2.5 rounded-full bg-teal" />
+                <span className="label-text text-teal">ACTIVE BETA</span>
               </div>
-              <h3 className="text-lg font-semibold" style={{ color: 'var(--bg-primary)' }}>
+              <h3 className="text-lg font-semibold text-text-primary">
                 {partner.name}
               </h3>
-              <p className="text-sm mt-1" style={{ color: 'var(--text-body)' }}>
+              <p className="text-sm mt-1 text-text-body">
                 {partner.location}
               </p>
             </div>
@@ -39,7 +38,7 @@ export default function BetaPartnersSection() {
         </ScrollReveal>
 
         <ScrollReveal delay={0.3}>
-          <p className="mt-8 text-sm" style={{ color: 'var(--text-body)' }}>
+          <p className="mt-8 text-sm text-text-body">
             General availability opens Q3 2026. Inquiries open now.
           </p>
         </ScrollReveal>

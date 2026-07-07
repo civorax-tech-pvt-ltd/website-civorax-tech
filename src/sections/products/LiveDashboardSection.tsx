@@ -23,56 +23,54 @@ const events = [
 
 export default function LiveDashboardSection() {
   return (
-    <section className="section-padding bg-white">
+    <section className="section-padding bg-white dark:bg-bg-primary">
       <div className="content-max-width">
         <ScrollReveal>
           <div
-            className="rounded-2xl overflow-hidden"
-            style={{ backgroundColor: 'var(--bg-light)', border: '1px solid var(--border-light)' }}
+            className="rounded-2xl overflow-hidden bg-bg-light border border-border-light"
           >
             {/* Dashboard Header */}
             <div className="flex items-center justify-between px-6 py-4">
               <div className="flex items-center gap-3">
-                <span className="w-2 h-2 rounded-full" style={{ backgroundColor: 'var(--teal)' }} />
-                <span className="label-text" style={{ color: 'var(--bg-primary)' }}>LIVE BETA SNAPSHOT</span>
-                <span className="label-text" style={{ color: 'var(--text-tertiary)' }}>• Jun 2026</span>
+                <span className="w-2 h-2 rounded-full bg-teal" />
+                <span className="label-text text-text-primary">LIVE BETA SNAPSHOT</span>
+                <span className="label-text text-text-tertiary">• Jun 2026</span>
               </div>
-              <span className="label-text" style={{ color: 'var(--text-tertiary)' }}>SCOPE: KOSHI PROVINCE BETA</span>
+              <span className="label-text text-text-tertiary">SCOPE: KOSHI PROVINCE BETA</span>
             </div>
 
             {/* Metrics Grid */}
-            <div className="grid grid-cols-2 md:grid-cols-4" style={{ borderTop: '1px solid var(--border-light)' }}>
+            <div className="grid grid-cols-2 md:grid-cols-4 border-t border-border-light">
               {metrics.map((m, i) => (
                 <div
                   key={m.label}
-                  className="px-6 py-5"
+                  className="px-6 py-5 border-b border-border-light"
                   style={{
                     borderRight: i < 3 ? '1px solid var(--border-light)' : 'none',
-                    borderBottom: '1px solid var(--border-light)',
                   }}
                 >
-                  <p className="label-text mb-2" style={{ color: 'var(--text-tertiary)' }}>{m.label}</p>
-                  <p className="text-2xl md:text-3xl font-bold" style={{ color: 'var(--bg-primary)', letterSpacing: '-0.02em' }}>
+                  <p className="label-text mb-2 text-text-tertiary">{m.label}</p>
+                  <p className="text-2xl md:text-3xl font-bold text-text-primary tracking-tighter">
                     {m.value}
                     {m.detail && !m.detailColor && (
-                      <span className="text-base font-normal" style={{ color: 'var(--text-tertiary)' }}>{m.detail}</span>
+                      <span className="text-base font-normal text-text-tertiary">{m.detail}</span>
                     )}
                   </p>
                   {m.detailColor && (
                     <p className="text-[13px] mt-1" style={{ color: m.detailColor }}>{m.detail}</p>
                   )}
                   {m.detailSub && (
-                    <p className="text-[13px] mt-1" style={{ color: 'var(--text-tertiary)' }}>{m.detailSub}</p>
+                    <p className="text-[13px] mt-1 text-text-tertiary">{m.detailSub}</p>
                   )}
                 </div>
               ))}
             </div>
 
             {/* Bottom Section */}
-            <div className="grid grid-cols-1 lg:grid-cols-2" style={{ borderTop: '1px solid var(--border-light)' }}>
+            <div className="grid grid-cols-1 lg:grid-cols-2 border-t border-border-light">
               {/* Bar Chart */}
               <div className="p-6">
-                <p className="label-text mb-4" style={{ color: 'var(--text-tertiary)' }}>HOURLY THROUGHPUT</p>
+                <p className="label-text mb-4 text-text-tertiary">HOURLY THROUGHPUT</p>
                 <div className="flex items-end justify-between gap-1 h-32">
                   {hourlyData.map((val, i) => (
                     <div key={i} className="flex flex-col items-center flex-1">
@@ -84,7 +82,7 @@ export default function LiveDashboardSection() {
                           minHeight: '4px',
                         }}
                       />
-                      <span className="text-[10px] mt-1 font-mono" style={{ color: 'var(--text-secondary)' }}>
+                      <span className="text-[10px] mt-1 font-mono text-text-secondary">
                         {timeLabels[i]}
                       </span>
                     </div>
@@ -94,16 +92,15 @@ export default function LiveDashboardSection() {
 
               {/* Event Stream */}
               <div
-                className="p-5 m-4 rounded-xl overflow-hidden"
-                style={{ backgroundColor: 'var(--bg-primary)' }}
+                className="p-5 m-4 rounded-xl overflow-hidden bg-bg-primary"
               >
                 <div className="flex items-center gap-2 mb-3">
-                  <span className="w-1.5 h-1.5 rounded-full" style={{ backgroundColor: 'var(--teal)' }} />
-                  <span className="label-text" style={{ color: 'var(--teal)' }}>EVENT STREAM</span>
+                  <span className="w-1.5 h-1.5 rounded-full bg-teal" />
+                  <span className="label-text text-teal">EVENT STREAM</span>
                 </div>
                 <div className="space-y-1.5 max-h-36 overflow-y-auto">
                   {events.map((e, i) => (
-                    <p key={i} className="font-mono text-xs" style={{ color: 'var(--accent-light)' }}>
+                    <p key={i} className="font-mono text-xs text-accent-light">
                       {e}
                     </p>
                   ))}
@@ -116,8 +113,8 @@ export default function LiveDashboardSection() {
         {/* Status Bar */}
         <ScrollReveal delay={0.2}>
           <div className="flex flex-wrap items-center gap-x-8 gap-y-2 mt-4 px-2">
-            <span className="text-sm" style={{ color: 'var(--text-tertiary)' }}>All sync engines nominal</span>
-            <span className="font-mono text-[13px]" style={{ color: 'var(--text-tertiary)' }}>
+            <span className="text-sm text-text-tertiary">All sync engines nominal</span>
+            <span className="font-mono text-[13px] text-text-tertiary">
               REQ/s: 24 · LATENCY: 48ms · ERR: 0.00%
             </span>
           </div>

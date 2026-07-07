@@ -8,6 +8,11 @@ import type { Metadata } from 'next'
 export const metadata: Metadata = {
   title: 'Career',
   description: 'Join CivoraX in Dharan. Build production software that works under real conditions in Nepal.',
+  keywords: [
+    'civora careers', 'civorax jobs', 'software engineer dharan',
+    'developer job nepal', 'IT company koshi', 'engineering culture',
+    'reverse minded', 'saugat dhungana',
+  ],
   openGraph: {
     title: 'Career at CivoraX — Build Software That Works',
     description: 'Join CivoraX in Dharan. Build production software that works under real conditions in Nepal.',

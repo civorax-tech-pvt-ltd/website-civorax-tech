@@ -14,14 +14,14 @@ const values = [
   {
     icon: Target,
     title: 'Meaningful Impact',
-    description: 'Your code keeps shops running during load-shedding. Real consequences, real satisfaction.',
+    description: 'Your code keeps shops running during load-shedding. Real consequences.',
     tag: 'Purpose',
     accent: '#84cc16',
   },
   {
     icon: Code2,
     title: 'Production Over Demos',
-    description: 'We ship code that runs in real shops, not polished prototypes that break in the field.',
+    description: 'We ship code that runs in real shops. No throwaway prototypes.',
     tag: 'Engineering',
     accent: '#65a30d',
   },
@@ -50,16 +50,16 @@ const values = [
 
 export default function CultureSection() {
   return (
-    <section className="section-padding bg-white">
+    <section className="section-padding bg-white dark:bg-bg-primary">
       <div className="content-max-width">
         <ScrollReveal>
           <div className="text-center max-w-[720px] mx-auto">
-            <span className="label-text" style={{ color: 'var(--accent-dark)' }}>WHY CIVORAX</span>
-            <h2 className="mt-4 text-3xl md:text-[42px] font-bold leading-tight" style={{ color: 'var(--bg-primary)', letterSpacing: '-0.01em' }}>
+            <span className="label-text text-accent-dark">WHY CIVORAX</span>
+            <h2 className="mt-4 text-3xl md:text-[42px] font-bold leading-tight text-text-primary tracking-tight">
               We don&apos;t chase trends.
             </h2>
-            <p className="mt-4 text-base leading-relaxed" style={{ color: 'var(--text-body)' }}>
-              We build offline-first systems that survive Nepal&apos;s real infrastructure. If you want to build software your own community actually uses, this is that place.
+            <p className="mt-4 text-base leading-relaxed text-text-body">
+              We build offline-first systems for Nepal&apos;s infrastructure. Build software your community uses.
             </p>
           </div>
         </ScrollReveal>
@@ -68,8 +68,7 @@ export default function CultureSection() {
           {values.map((v) => (
             <div
               key={v.title}
-              className="rounded-2xl p-8 transition-all duration-300 hover:-translate-y-1 cursor-pointer"
-              style={{ backgroundColor: '#f5f5f5' }}
+              className="rounded-2xl p-8 transition-all duration-300 hover:-translate-y-1 bg-bg-light"
               onMouseEnter={(e) => { (e.currentTarget as HTMLDivElement).style.boxShadow = '0 8px 24px rgba(54,83,20,0.12)' }}
               onMouseLeave={(e) => { (e.currentTarget as HTMLDivElement).style.boxShadow = 'none' }}
             >
@@ -87,10 +86,10 @@ export default function CultureSection() {
                   {v.tag}
                 </span>
               </div>
-              <h3 className="text-lg font-semibold leading-snug" style={{ color: 'var(--bg-primary)' }}>
+              <h3 className="text-lg font-semibold leading-snug text-text-primary">
                 {v.title}
               </h3>
-              <p className="mt-2 text-[15px] leading-relaxed" style={{ color: 'var(--text-body)' }}>
+              <p className="mt-2 text-[15px] leading-relaxed text-text-body">
                 {v.description}
               </p>
             </div>

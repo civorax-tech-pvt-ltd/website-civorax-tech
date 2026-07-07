@@ -7,6 +7,11 @@ import type { Metadata } from 'next'
 export const metadata: Metadata = {
   title: 'Contact',
   description: 'Get in touch with CivoraX. < 24h reply, architecture audits, and dedicated support from Dharan, Nepal.',
+  keywords: [
+    'contact civorax', 'civora tech contact', 'software company dharan',
+    'IT support nepal', 'POS support', 'ERP consultation',
+    'dheeraj uparkoti', 'saugat dhungana',
+  ],
   openGraph: {
     title: 'Contact CivoraX — Get in Touch',
     description: 'Get in touch with CivoraX. < 24h reply, architecture audits, and dedicated support from Dharan, Nepal.',

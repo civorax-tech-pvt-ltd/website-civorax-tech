@@ -4,12 +4,12 @@ const features = [
   {
     icon: Shield,
     title: 'Enterprise-Grade Security',
-    description: 'End-to-end encryption, role-based access controls, and audit trails. Your data stays yours — always.',
+    description: 'End-to-end encryption, role-based access controls, and audit trails. You keep all data.',
   },
   {
     icon: Cpu,
     title: 'Offline Sync Engine',
-    description: 'Our proprietary Go-based sync engine handles intermittent connectivity gracefully. Branch data stays consistent even across unreliable networks.',
+    description: 'Our proprietary Go-based sync engine handles intermittent connectivity. Branch data stays consistent even across unreliable networks.',
   },
   {
     icon: BarChart3,
@@ -29,7 +29,7 @@ const features = [
   {
     icon: Settings2,
     title: 'Full Source Ownership',
-    description: 'No subscriptions, no lock-in. You own the code forever. We build it, you keep it.',
+    description: 'No subscriptions, no lock-in. You own the code. We build it, you keep it.',
   },
 ]
 
@@ -37,11 +37,11 @@ export function Features() {
   return (
     <div>
       <div className="relative z-10 mx-auto max-w-xl space-y-6 text-center md:space-y-12">
-        <h2 className="text-balance text-4xl font-medium lg:text-5xl" style={{ color: 'var(--text-primary)' }}>
+        <h2 className="text-balance text-4xl font-medium lg:text-5xl text-text-primary">
           Built for Nepal&apos;s Reality
         </h2>
-        <p style={{ color: 'var(--text-body)' }}>
-          Every feature designed around the constraints our clients actually face — intermittent power, slow connections, and complex compliance.
+        <p className="text-text-body">
+          Every feature designed around the constraints our clients face: intermittent power, slow connections, complex compliance.
         </p>
       </div>
 
@@ -49,23 +49,15 @@ export function Features() {
         {features.map((feature) => (
           <div
             key={feature.title}
-            className="text-center rounded-2xl p-8 transition-all duration-300 hover:-translate-y-1"
-            style={{
-              backgroundColor: 'var(--text-white)',
-              border: '1px solid var(--border-light)',
-              boxShadow: '0 2px 8px rgba(0,0,0,0.04)',
-            }}
+            className="text-center rounded-2xl p-8 transition-all duration-300 hover:-translate-y-1 bg-bg-white border border-border-light shadow-[0_2px_8px_rgba(0,0,0,0.04)]"
           >
-            <div
-              className="w-12 h-12 rounded-full flex items-center justify-center mx-auto"
-              style={{ backgroundColor: 'var(--accent-badge)' }}
-            >
-              <feature.icon size={22} style={{ color: 'var(--accent-dark)' }} />
+            <div className="w-12 h-12 rounded-full flex items-center justify-center mx-auto bg-accent-badge">
+              <feature.icon size={22} className="text-accent-dark" />
             </div>
-            <h3 className="mt-6 text-[22px] font-semibold" style={{ color: 'var(--bg-primary)' }}>
+            <h3 className="mt-6 text-[22px] font-semibold text-bg-primary">
               {feature.title}
             </h3>
-            <p className="mt-3 text-[15px] leading-relaxed" style={{ color: 'var(--text-body)' }}>
+            <p className="mt-3 text-[15px] leading-relaxed text-text-body">
               {feature.description}
             </p>
           </div>

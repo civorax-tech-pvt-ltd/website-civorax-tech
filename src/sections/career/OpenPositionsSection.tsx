@@ -42,13 +42,13 @@ const jobs = [
 
 export default function OpenPositionsSection() {
   return (
-    <section id="openings" className="section-padding" style={{ backgroundColor: 'var(--bg-light)' }}>
+    <section id="openings" className="section-padding bg-bg-light">
       <div className="content-max-width">
         <ScrollReveal>
           <SectionHeader
             label="OPEN POSITIONS"
             heading="Join the Studio"
-            subheading="We're looking for engineers who want to build production systems — not polished demos."
+            subheading="Engineers who build production systems, not demos."
           />
         </ScrollReveal>
 
@@ -56,8 +56,7 @@ export default function OpenPositionsSection() {
           {jobs.map((job) => (
             <ScrollReveal key={job.title}>
               <div
-                className="rounded-2xl p-8 transition-all duration-300 hover:-translate-y-1 h-full flex flex-col cursor-pointer"
-                style={{ backgroundColor: '#f5f5f5', border: '1px solid var(--border-light)' }}
+                className="rounded-2xl p-8 transition-all duration-300 hover:-translate-y-1 h-full flex flex-col bg-bg-light border border-border-light"
                 onMouseEnter={(e) => { (e.currentTarget as HTMLDivElement).style.boxShadow = '0 8px 24px rgba(54,83,20,0.12)' }}
                 onMouseLeave={(e) => { (e.currentTarget as HTMLDivElement).style.boxShadow = 'none' }}
               >
@@ -70,7 +69,7 @@ export default function OpenPositionsSection() {
                       <job.icon size={18} color="#fff" />
                     </div>
                     <div>
-                      <h3 className="text-lg font-semibold" style={{ color: 'var(--bg-primary)' }}>
+                      <h3 className="text-lg font-semibold text-text-primary">
                         {job.title}
                       </h3>
                       <div className="flex items-center gap-2 mt-1">
@@ -80,7 +79,7 @@ export default function OpenPositionsSection() {
                         >
                           {job.meta}
                         </span>
-                        <span className="text-xs" style={{ color: 'var(--text-tertiary)' }}>
+                        <span className="text-xs text-text-tertiary">
                           {job.location}
                         </span>
                       </div>
@@ -88,14 +87,13 @@ export default function OpenPositionsSection() {
                   </div>
                 </div>
 
-                <p className="text-[15px] leading-relaxed flex-1" style={{ color: 'var(--text-body)' }}>
+                <p className="text-[15px] leading-relaxed flex-1 text-text-body">
                   {job.description}
                 </p>
 
                 <Link
                   href="/contact"
-                  className="group inline-flex items-center gap-1 mt-6 label-text transition-colors duration-200"
-                  style={{ color: 'var(--accent-dark)' }}
+                  className="group inline-flex items-center gap-1 mt-6 label-text transition-colors duration-200 text-accent-dark"
                 >
                   Apply Now
                   <ArrowRight size={12} className="transition-transform duration-300 group-hover:translate-x-1" />

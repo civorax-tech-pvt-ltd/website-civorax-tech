@@ -9,18 +9,17 @@ const stats = [
 
 export default function StatsSection() {
   return (
-    <section style={{ backgroundColor: 'var(--bg-primary)', paddingBottom: '64px' }}>
+    <section className="bg-bg-primary pb-[64px]">
       <div className="content-max-width px-4 sm:px-6 lg:px-8">
         <ScrollReveal stagger={0.1} className="grid grid-cols-2 md:grid-cols-4 gap-8">
           {stats.map((stat) => (
             <div key={stat.label} className="text-center">
               <div
-                className="text-3xl md:text-[42px] font-bold"
-                style={{ color: 'var(--accent-light)', letterSpacing: '-0.02em' }}
+                className="text-3xl md:text-[42px] font-bold text-accent-light tracking-tighter"
               >
                 {stat.value}
               </div>
-              <div className="label-text mt-2" style={{ color: 'var(--text-secondary)' }}>
+              <div className="label-text mt-2 text-text-secondary">
                 {stat.label}
               </div>
             </div>

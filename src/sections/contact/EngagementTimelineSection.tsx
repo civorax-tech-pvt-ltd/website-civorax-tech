@@ -25,14 +25,14 @@ const steps = [
 
 export default function EngagementTimelineSection() {
   return (
-    <section className="section-padding bg-white">
+    <section className="section-padding bg-white dark:bg-bg-primary">
       <div className="content-max-width">
         <ScrollReveal>
-          <span className="label-text" style={{ color: 'var(--accent-dark)' }}>ENGAGEMENT TIMELINE</span>
-          <h2 className="mt-4 text-3xl md:text-[42px] font-bold leading-tight" style={{ color: 'var(--bg-primary)', letterSpacing: '-0.01em' }}>
-            What happens after you file an inquiry.
+          <span className="label-text text-accent-dark">ENGAGEMENT TIMELINE</span>
+          <h2 className="mt-4 text-3xl md:text-[42px] font-bold leading-tight text-text-primary tracking-tight">
+            After you send an inquiry.
           </h2>
-          <p className="mt-3 text-base leading-relaxed max-w-[560px]" style={{ color: 'var(--text-body)' }}>
+          <p className="mt-3 text-base leading-relaxed max-w-[560px] text-text-body">
             A predictable four-step path from first contact to kickoff. Every step has a documented SLA and a named owner on our team.
           </p>
         </ScrollReveal>
@@ -40,24 +40,18 @@ export default function EngagementTimelineSection() {
         {/* Timeline */}
         <div className="relative mt-16">
           {/* Connecting line (desktop only) */}
-          <div
-            className="hidden lg:block absolute top-[30px] left-0 right-0 h-0.5 z-0"
-            style={{ backgroundColor: 'var(--border-light)' }}
-          />
+          <div className="hidden lg:block absolute top-[30px] left-0 right-0 h-0.5 z-0 bg-border-light" />
 
           <ScrollReveal stagger={0.12} className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 relative z-10">
             {steps.map((step) => (
               <div key={step.number}>
-                <span
-                  className="font-mono text-5xl font-bold block"
-                  style={{ color: 'rgba(132,204,22,0.35)' }}
-                >
+                <span className="font-mono text-5xl font-bold block text-[rgba(132,204,22,0.35)]">
                   {step.number}
                 </span>
-                <h3 className="mt-4 text-[22px] font-semibold" style={{ color: 'var(--bg-primary)' }}>
+                <h3 className="mt-4 text-[22px] font-semibold text-text-primary">
                   {step.title}
                 </h3>
-                <p className="mt-2 text-sm leading-relaxed" style={{ color: 'var(--text-body)' }}>
+                <p className="mt-2 text-sm leading-relaxed text-text-body">
                   {step.description}
                 </p>
               </div>

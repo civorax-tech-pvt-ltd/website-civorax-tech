@@ -18,7 +18,7 @@ export default function BackToTop() {
 
   return (
     <button
-      onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+      onClick={() => window.scrollTo({ top: 0 })}
       className="fixed bottom-6 left-6 z-50 w-11 h-11 rounded-full flex items-center justify-center transition-all duration-300 hover:scale-110"
       style={{
         backgroundColor: 'var(--bg-primary)',
@@ -27,7 +27,7 @@ export default function BackToTop() {
       }}
       aria-label="Back to top"
     >
-      <ArrowUp size={18} />
+      <ArrowUp size={18} aria-hidden="true" />
     </button>
   )
 }

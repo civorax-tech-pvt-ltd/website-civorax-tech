@@ -8,15 +8,15 @@ const badges = [
 
 export default function PhilosophySection() {
   return (
-    <section className="section-padding" style={{ backgroundColor: 'var(--bg-light)' }}>
+    <section className="section-padding bg-bg-light">
       <div className="content-max-width max-w-[800px] mx-auto text-center">
         <ScrollReveal>
-          <span className="label-text" style={{ color: 'var(--accent-dark)' }}>MANIFESTO</span>
-          <h2 className="mt-4 text-3xl md:text-[42px] font-bold leading-tight" style={{ color: 'var(--bg-primary)', letterSpacing: '-0.01em' }}>
+          <span className="label-text text-accent-dark">MANIFESTO</span>
+          <h2 className="mt-4 text-3xl md:text-[42px] font-bold leading-tight text-text-primary tracking-tight">
             We give you the code. You own it forever.
           </h2>
-          <p className="mt-4 text-lg" style={{ color: 'var(--text-body)' }}>
-            No subscriptions. No lock-in. Just software that works.
+          <p className="mt-4 text-lg text-text-body">
+            No subscriptions. No lock-in. Software that works.
           </p>
         </ScrollReveal>
 
@@ -24,14 +24,9 @@ export default function PhilosophySection() {
           {badges.map((badge) => (
             <span
               key={badge}
-              className="inline-flex items-center gap-2 rounded-full px-5 py-2 label-text"
-              style={{
-                backgroundColor: 'var(--text-white)',
-                border: '1px solid var(--border-light)',
-                color: 'var(--bg-primary)',
-              }}
+              className="inline-flex items-center gap-2 rounded-full px-5 py-2 label-text bg-bg-white border border-border-light text-text-primary"
             >
-              <span className="w-1.5 h-1.5 rounded-full" style={{ backgroundColor: 'var(--accent-light)' }} />
+              <span className="w-1.5 h-1.5 rounded-full bg-accent-light" />
               {badge}
             </span>
           ))}

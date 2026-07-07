@@ -29,14 +29,14 @@ const steps = [
   {
     icon: Shield,
     title: 'Enterprise-Grade Security',
-    description: 'End-to-end encryption, role-based access, and full audit trails. Your data stays yours.',
+    description: 'End-to-end encryption, role-based access, and full audit trails. You keep all data.',
     tag: 'Security',
     accent: '#365314',
   },
   {
     icon: BarChart3,
     title: 'Real-Time Analytics',
-    description: 'Live dashboards for transaction volumes, branch performance, inventory levels, and compliance status — across every location.',
+    description: 'Live dashboards for transaction volumes, branch performance, inventory levels, and compliance status across every location.',
     tag: 'Intelligence',
     accent: '#4d7c0f',
   },
@@ -51,13 +51,13 @@ const steps = [
 
 export default function HowItWorksSection() {
   return (
-    <section className="section-padding bg-white">
+    <section className="section-padding bg-white dark:bg-bg-primary">
       <div className="content-max-width">
         <ScrollReveal>
           <SectionHeader
             label="HOW IT WORKS"
             heading="How CivoraX Systems Work"
-            subheading="Built for the conditions our clients actually work in — not the conditions software usually assumes."
+            subheading="Built for conditions clients work in, not conditions software assumes."
           />
         </ScrollReveal>
 
@@ -65,8 +65,7 @@ export default function HowItWorksSection() {
           {steps.map((step) => (
             <div
               key={step.title}
-              className="rounded-2xl p-8 transition-all duration-300 hover:-translate-y-1 cursor-pointer"
-              style={{ backgroundColor: '#f5f5f5' }}
+              className="rounded-2xl p-8 bg-bg-light dark:bg-bg-card transition-all duration-300 hover:-translate-y-1"
               onMouseEnter={(e) => { (e.currentTarget as HTMLDivElement).style.boxShadow = '0 8px 24px rgba(54,83,20,0.15)' }}
               onMouseLeave={(e) => { (e.currentTarget as HTMLDivElement).style.boxShadow = 'none' }}
             >
@@ -84,10 +83,10 @@ export default function HowItWorksSection() {
                   {step.tag}
                 </span>
               </div>
-              <h3 className="text-lg font-semibold leading-snug" style={{ color: 'var(--bg-primary)' }}>
+              <h3 className="text-lg font-semibold leading-snug text-text-primary dark:text-white">
                 {step.title}
               </h3>
-              <p className="mt-2 text-[15px] leading-relaxed" style={{ color: 'var(--text-body)' }}>
+              <p className="mt-2 text-[15px] leading-relaxed text-text-body">
                 {step.description}
               </p>
             </div>

@@ -1,0 +1,19 @@
+# CivoraX Tech
+
+> Offline-first software for Nepal. POS systems, ERPs, and web portals built in Dharan.
+
+## Product
+
+- [Home](https://civorax.com.np): Software engineering studio homepage.
+- [Retail POS](https://civorax.com.np/products/civorax-retail-pos): Offline-first POS for supermarkets, hardware stores, and restaurants.
+- [Core ERP](https://civorax.com.np/products/civorax-core-erp): Inventory, compliance, and performance across locations.
+- [Custom Web Apps](https://civorax.com.np/products/custom-web-apps): Business portals, admin panels, and internal tools.
+
+## Company
+
+- [About](https://civorax.com.np/about): Studio story, team, and philosophy.
+- [Careers](https://civorax.com.np/career): Open engineering positions in Dharan.
+
+## Get In Touch
+
+- [Contact](https://civorax.com.np/contact): Free architecture consultation for businesses in Nepal.

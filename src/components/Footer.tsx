@@ -13,25 +13,21 @@ const socialLinks = [
 
 export default function Footer() {
   return (
-    <footer className="relative" style={{ backgroundColor: 'var(--bg-primary)' }}>
+    <footer className="relative bg-bg-primary">
       {/* CTA Banner */}
-      <div
-        className="px-4 sm:px-6 lg:px-8 py-12"
-        style={{ backgroundColor: 'var(--bg-secondary)' }}
-      >
+      <div className="px-4 sm:px-6 lg:px-8 py-12 bg-bg-secondary">
         <div className="content-max-width flex flex-col md:flex-row items-center justify-between gap-6">
           <div>
             <h3 className="text-xl md:text-2xl font-bold text-white">
               Ready to start your project?
             </h3>
-            <p className="mt-1 text-sm" style={{ color: 'var(--text-secondary)' }}>
+            <p className="mt-1 text-sm text-text-secondary">
               Free architecture consultation for businesses in Nepal.
             </p>
           </div>
           <Link
             href="/contact"
-            className="group inline-flex items-center gap-2 text-[15px] font-semibold rounded-full transition-all duration-300 hover:gap-3"
-            style={{ backgroundColor: 'var(--accent-light)', color: 'var(--bg-primary)', padding: '14px 32px' }}
+            className="group inline-flex items-center gap-2 text-[15px] font-semibold rounded-full px-8 py-3.5 bg-accent-light text-bg-primary transition-all duration-300 hover:gap-3"
           >
             Get In Touch
             <ArrowRight size={16} className="transition-transform duration-300 group-hover:translate-x-1" />
@@ -40,7 +36,7 @@ export default function Footer() {
       </div>
 
       {/* Top accent bar */}
-      <div className="h-px w-full" style={{ backgroundColor: 'var(--accent-light)' }} />
+      <div className="h-px w-full bg-accent-light" />
 
       <div className="content-max-width px-4 sm:px-6 lg:px-8 pt-16 pb-6">
         {/* Main Grid */}
@@ -50,116 +46,108 @@ export default function Footer() {
             <Link href="/" className="flex items-center gap-0">
               <span className="text-xl font-bold text-white">Civora</span>
               <span
-                className="text-xl font-bold"
-                style={{
-                  color: 'var(--accent-light)',
-                  clipPath: 'polygon(15% 0%, 100% 0%, 85% 100%, 0% 100%)',
-                  padding: '0 6px',
-                  marginLeft: '2px',
-                }}
+                className="text-xl font-bold text-accent-light px-1.5 ml-0.5"
+                style={{ clipPath: 'polygon(15% 0%, 100% 0%, 85% 100%, 0% 100%)' }}
               >
                 X
               </span>
             </Link>
-            <p className="mt-3 text-sm leading-relaxed" style={{ color: 'var(--text-secondary)', maxWidth: '280px' }}>
+            <p className="mt-3 text-sm leading-relaxed text-text-secondary max-w-[280px]">
               Offline-first software for Nepal. POS systems, ERPs, and web portals built in Dharan.
             </p>
 
             {/* Server status card */}
-            <div
-              className="mt-4 inline-flex items-center gap-2.5 px-3 py-2 rounded-lg"
-              style={{ backgroundColor: 'var(--bg-card)', border: '1px solid var(--border-subtle-dark)' }}
-            >
-              <Server size={14} style={{ color: 'var(--teal)' }} />
+            <div className="mt-4 inline-flex items-center gap-2.5 px-3 py-2 rounded-lg bg-bg-card border border-border-subtle-dark">
+              <Server size={14} className="text-teal" />
               <div className="flex items-center gap-1.5">
-                <span className="w-1.5 h-1.5 rounded-full animate-pulse-live" style={{ backgroundColor: 'var(--teal)' }} />
-                <span className="text-xs font-medium" style={{ color: 'var(--text-secondary)' }}>Dharan Main Server: LIVE</span>
+                <span className="w-1.5 h-1.5 rounded-full animate-pulse-live bg-teal" />
+                <span className="text-xs font-medium text-text-secondary">Dharan Main Server: LIVE</span>
               </div>
             </div>
 
             {/* Nepal badge */}
-            <div className="mt-3 inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md" style={{ backgroundColor: 'rgba(132,204,22,0.08)', border: '1px solid rgba(132,204,22,0.12)' }}>
-              <Globe size={12} style={{ color: 'var(--accent-light)' }} />
-              <span className="text-[11px] font-medium" style={{ color: 'var(--accent-light)' }}>Made in Nepal</span>
+            <div className="mt-3 inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md border border-accent/10 bg-accent/5">
+              <Globe size={12} className="text-accent-light" />
+              <span className="text-[11px] font-medium text-accent-light">Made in Nepal</span>
             </div>
           </div>
 
           {/* Productions */}
-          <div>
-            <h4 className="flex items-center gap-2 label-text mb-5" style={{ color: 'var(--text-secondary)' }}>
-              <Monitor size={14} style={{ color: 'var(--accent-light)' }} />
+          <nav aria-label="Products">
+            <h4 className="flex items-center gap-2 label-text text-text-secondary mb-5">
+              <Monitor size={14} className="text-accent-light" />
               PRODUCTIONS
             </h4>
             <ul className="space-y-3">
               <li>
-                <Link href="/products" className="flex items-center gap-2 text-sm transition-colors duration-200 hover:text-white group" style={{ color: 'var(--text-secondary)' }}>
-                  <Smartphone size={13} className="opacity-50 group-hover:opacity-100 transition-opacity" style={{ color: 'var(--accent-light)' }} />
+                <Link href="/products/civorax-retail-pos" className="flex items-center gap-2 text-sm text-text-secondary transition-colors duration-200 hover:text-white group">
+                  <Smartphone size={13} className="opacity-50 group-hover:opacity-100 transition-opacity text-accent-light" />
                   Retail POS Client
                 </Link>
               </li>
               <li>
-                <Link href="/products" className="flex items-center gap-2 text-sm transition-colors duration-200 hover:text-white group" style={{ color: 'var(--text-secondary)' }}>
-                  <Database size={13} className="opacity-50 group-hover:opacity-100 transition-opacity" style={{ color: 'var(--accent-light)' }} />
+                <Link href="/products/civorax-core-erp" className="flex items-center gap-2 text-sm text-text-secondary transition-colors duration-200 hover:text-white group">
+                  <Database size={13} className="opacity-50 group-hover:opacity-100 transition-opacity text-accent-light" />
                   Enterprise ERP
                 </Link>
               </li>
             </ul>
-          </div>
+          </nav>
 
           {/* Studio Blueprint */}
-          <div>
-            <h4 className="flex items-center gap-2 label-text mb-5" style={{ color: 'var(--text-secondary)' }}>
-              <Compass size={14} style={{ color: 'var(--accent-light)' }} />
+          <nav aria-label="Company">
+            <h4 className="flex items-center gap-2 label-text text-text-secondary mb-5">
+              <Compass size={14} className="text-accent-light" />
               STUDIO BLUEPRINT
             </h4>
             <ul className="space-y-3">
               <li>
-                <Link href="/products" className="flex items-center gap-2 text-sm transition-colors duration-200 hover:text-white group" style={{ color: 'var(--text-secondary)' }}>
-                  <Users size={13} className="opacity-50 group-hover:opacity-100 transition-opacity" style={{ color: 'var(--accent-light)' }} />
-                  Client Demo Room
+                <Link href="/about" className="flex items-center gap-2 text-sm text-text-secondary transition-colors duration-200 hover:text-white group">
+                  <Users size={13} className="opacity-50 group-hover:opacity-100 transition-opacity text-accent-light" />
+                  Our Team
                 </Link>
               </li>
               <li>
-                <Link href="/about" className="flex items-center gap-2 text-sm transition-colors duration-200 hover:text-white group" style={{ color: 'var(--text-secondary)' }}>
-                  <Heart size={13} className="opacity-50 group-hover:opacity-100 transition-opacity" style={{ color: 'var(--accent-light)' }} />
+                <Link href="/about" className="flex items-center gap-2 text-sm text-text-secondary transition-colors duration-200 hover:text-white group">
+                  <Heart size={13} className="opacity-50 group-hover:opacity-100 transition-opacity text-accent-light" />
                   Company Values
                 </Link>
               </li>
               <li>
-                <Link href="/contact" className="flex items-center gap-2 text-sm transition-colors duration-200 hover:text-white group" style={{ color: 'var(--text-secondary)' }}>
-                  <Headphones size={13} className="opacity-50 group-hover:opacity-100 transition-opacity" style={{ color: 'var(--accent-light)' }} />
+                <Link href="/contact" className="flex items-center gap-2 text-sm text-text-secondary transition-colors duration-200 hover:text-white group">
+                  <Headphones size={13} className="opacity-50 group-hover:opacity-100 transition-opacity text-accent-light" />
                   Contact Helpdesk
                 </Link>
               </li>
             </ul>
-          </div>
+          </nav>
 
           {/* Regional Branches */}
           <div>
-            <h4 className="flex items-center gap-2 label-text mb-5" style={{ color: 'var(--text-secondary)' }}>
-              <MapPin size={14} style={{ color: 'var(--accent-light)' }} />
+            <h4 className="flex items-center gap-2 label-text text-text-secondary mb-5">
+              <MapPin size={14} className="text-accent-light" />
               REGIONAL BRANCHES
             </h4>
             <ul className="space-y-4">
               <li className="flex items-start gap-2.5">
-                <MapPin size={13} className="mt-0.5 flex-shrink-0" style={{ color: 'var(--accent-light)' }} />
+                <MapPin size={13} className="mt-0.5 flex-shrink-0 text-accent-light" />
                 <div>
                   <span className="text-sm font-medium text-white">Koshi HQ</span>
-                  <p className="text-xs mt-0.5" style={{ color: 'var(--text-tertiary)' }}>Dharan-12, Koshi Province</p>
+                  <p className="text-xs mt-0.5 text-text-tertiary">Dharan-12, Koshi Province</p>
                 </div>
               </li>
               <li className="flex items-start gap-2.5">
-                <MapPin size={13} className="mt-0.5 flex-shrink-0" style={{ color: 'var(--text-tertiary)' }} />
+                <MapPin size={13} className="mt-0.5 flex-shrink-0 text-text-tertiary" />
                 <div>
                   <span className="text-sm font-medium text-white">Bagmati Hub</span>
-                  <p className="text-xs mt-0.5" style={{ color: 'var(--text-tertiary)' }}>Tinkune, Kathmandu <span style={{ color: 'var(--accent-dark)' }}>*expanding soon</span></p>
+                  <p className="text-xs mt-0.5 text-text-tertiary">Tinkune, Kathmandu <span className="text-accent-dark">*expanding soon</span></p>
                 </div>
               </li>
               <li className="flex items-start gap-2.5">
-                <MapPin size={13} className="mt-0.5 flex-shrink-0" style={{ color: 'var(--text-tertiary)' }} />
+                <MapPin size={13} className="mt-0.5 flex-shrink-0 text-text-tertiary" />
                 <div>
                   <span className="text-sm font-medium text-white">Gandaki Node</span>
-                  <p className="text-xs mt-0.5" style={{ color: 'var(--text-tertiary)' }}>Pokhara Lakeside <span style={{ color: 'var(--accent-dark)' }}>*expanding soon</span></p>
+                  <p className="text-xs mt-0.5 text-text-tertiary">Pokhara Lakeside <span className="text-accent-dark">*expanding soon</span></p>
                 </div>
               </li>
             </ul>
@@ -167,35 +155,33 @@ export default function Footer() {
         </div>
 
         {/* Bottom Bar */}
-        <div
-          className="mt-14 pt-6 flex flex-col sm:flex-row items-center justify-between gap-4"
-          style={{ borderTop: '1px solid var(--border-dark)' }}
-        >
-          <div className="text-xs" style={{ color: 'var(--text-tertiary)' }}>
-            © 2026 CivoraX Tech Pvt. Ltd. All rights reserved.
-            <span className="hidden sm:inline"> • </span>
+        <div className="mt-14 pt-6 flex flex-col sm:flex-row items-center justify-between gap-4 border-t border-border-dark">
+          <div className="text-xs text-text-tertiary">
+            &copy; 2026 CivoraX Tech Pvt. Ltd. All rights reserved.
+            <span className="hidden sm:inline"> &bull; </span>
             <br className="sm:hidden" />
-            PAN: 608291042 • Dharan, Koshi Province, Nepal
+            PAN: 608291042 &bull; Dharan, Koshi Province, Nepal
           </div>
 
           {/* Social Icons */}
-          <div className="flex items-center gap-3">
-            {socialLinks.map((social) => (
-              <a
-                key={social.label}
-                href={social.label === 'WhatsApp' ? 'https://wa.me/9779805309473' : '#'}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-8 h-8 rounded-lg flex items-center justify-center transition-all duration-200 hover:bg-bg-secondary"
-                style={{ color: 'var(--text-tertiary)' }}
-                aria-label={social.label}
-              >
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
-                  <path d={social.icon} />
-                </svg>
-              </a>
-            ))}
-          </div>
+          <nav aria-label="Social media" className="flex items-center gap-3">
+            {socialLinks
+              .filter((social) => social.label === 'WhatsApp')
+              .map((social) => (
+                <a
+                  key={social.label}
+                  href="https://wa.me/9779805309473"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-8 h-8 rounded-lg flex items-center justify-center text-text-tertiary transition-all duration-200 hover:bg-bg-secondary hover:text-white"
+                  aria-label={social.label}
+                >
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                    <path d={social.icon} />
+                  </svg>
+                </a>
+              ))}
+          </nav>
         </div>
       </div>
 

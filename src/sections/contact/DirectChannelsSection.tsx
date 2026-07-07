@@ -23,14 +23,14 @@ const channels = [
     icon: Phone,
     title: 'Phone',
     detail: '+977-9805309473',
-    description: 'Direct line to the Dharan studio. Best for voice conversations and scheduled deep-dive sessions.',
+    description: 'Direct line to the Dharan studio. Best for calls and scheduled discussions.',
     cta: 'CALL NOW',
     href: 'tel:+9779805309473',
   },
   {
     icon: Clock,
     title: 'Studio Hours',
-    detail: 'Sun-Fri \u2022 9AM-6PM NPT',
+    detail: 'Sun-Fri • 9AM-6PM NPT',
     description: 'Office is closed on Saturdays. Production clients have a 24/7 incident response channel.',
     status: 'CURRENTLY OPEN',
   },
@@ -38,14 +38,14 @@ const channels = [
 
 export default function DirectChannelsSection() {
   return (
-    <section className="section-padding" style={{ backgroundColor: 'var(--bg-light)' }}>
+    <section className="section-padding bg-bg-light">
       <div className="content-max-width">
         <ScrollReveal>
-          <span className="label-text" style={{ color: 'var(--accent-dark)' }}>DIRECT CHANNELS</span>
-          <h2 className="mt-4 text-3xl md:text-[42px] font-bold leading-tight" style={{ color: 'var(--bg-primary)', letterSpacing: '-0.01em' }}>
+          <span className="label-text text-accent-dark">DIRECT CHANNELS</span>
+          <h2 className="mt-4 text-3xl md:text-[42px] font-bold leading-tight text-text-primary tracking-tight">
             Prefer to reach us directly?
           </h2>
-          <p className="mt-3 text-base leading-relaxed max-w-[560px]" style={{ color: 'var(--text-body)' }}>
+          <p className="mt-3 text-base leading-relaxed max-w-[560px] text-text-body">
             Four direct lines into the studio. Pick the channel that matches the urgency of your inquiry.
           </p>
         </ScrollReveal>
@@ -54,23 +54,21 @@ export default function DirectChannelsSection() {
           {channels.map((ch) => (
             <div
               key={ch.title}
-              className="bg-white rounded-2xl p-8 transition-all duration-300 hover:-translate-y-1"
-              style={{ border: '1px solid var(--border-light)' }}
+              className="bg-white dark:bg-bg-primary rounded-2xl p-8 transition-all duration-300 hover:-translate-y-1 border border-border-light"
             >
               <div
-                className="w-12 h-12 rounded-xl flex items-center justify-center"
-                style={{ backgroundColor: 'var(--accent-badge)' }}
+                className="w-12 h-12 rounded-xl flex items-center justify-center bg-accent-badge"
               >
-                <ch.icon size={22} style={{ color: 'var(--accent-dark)' }} />
+                <ch.icon size={22} className="text-accent-dark" />
               </div>
 
-              <h3 className="mt-5 text-[22px] font-semibold" style={{ color: 'var(--bg-primary)' }}>
+              <h3 className="mt-5 text-[22px] font-semibold text-text-primary">
                 {ch.title}
               </h3>
-              <p className="mt-2 text-sm font-medium" style={{ color: 'var(--bg-primary)' }}>
+              <p className="mt-2 text-sm font-medium text-text-primary">
                 {ch.detail}
               </p>
-              <p className="mt-2 text-[13px] leading-relaxed" style={{ color: 'var(--text-body)' }}>
+              <p className="mt-2 text-[13px] leading-relaxed text-text-body">
                 {ch.description}
               </p>
 
@@ -79,8 +77,7 @@ export default function DirectChannelsSection() {
                   href={ch.href}
                   target={ch.href.startsWith('http') ? '_blank' : undefined}
                   rel={ch.href.startsWith('http') ? 'noopener noreferrer' : undefined}
-                  className="group inline-flex items-center gap-1 mt-5 label-text transition-colors duration-200 hover:text-accent-dark"
-                  style={{ color: 'var(--bg-primary)' }}
+                  className="group inline-flex items-center gap-1 mt-5 label-text transition-colors duration-200 hover:text-accent-dark text-text-primary"
                 >
                   {ch.cta}
                   <ArrowRight size={12} className="transition-transform duration-300 group-hover:translate-x-1" />
@@ -89,8 +86,8 @@ export default function DirectChannelsSection() {
 
               {ch.status && (
                 <div className="mt-5 flex items-center gap-2">
-                  <span className="w-1.5 h-1.5 rounded-full" style={{ backgroundColor: 'var(--teal)' }} />
-                  <span className="label-text" style={{ color: 'var(--teal)' }}>{ch.status}</span>
+                  <span className="w-1.5 h-1.5 rounded-full bg-teal" />
+                  <span className="label-text text-teal">{ch.status}</span>
                 </div>
               )}
             </div>

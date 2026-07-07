@@ -30,21 +30,20 @@ export default function ClientQuoteSection() {
   }, { scope: sectionRef })
 
   return (
-    <section ref={sectionRef} className="section-padding" style={{ backgroundColor: 'var(--bg-primary)' }}>
+    <section ref={sectionRef} className="section-padding bg-bg-primary">
       <div className="content-max-width max-w-[720px] mx-auto text-center">
         <p className="quote-text opacity-0 text-lg sm:text-xl italic leading-relaxed text-white">
           &ldquo;Power cuts don&apos;t stop us. Sales keep running offline and sync on their own later. My staff never had to learn anything new — it just works.&rdquo;
         </p>
 
         <div
-          className="quote-divider mx-auto my-8 h-0.5 origin-center"
-          style={{ width: '48px', backgroundColor: 'var(--accent-light)' }}
+          className="quote-divider mx-auto my-8 h-0.5 origin-center w-[48px] bg-accent-light"
         />
 
         <p className="quote-author opacity-0 text-base font-semibold text-white">
           Ram Prasad Khatiwada
         </p>
-        <p className="quote-author opacity-0 text-sm mt-1" style={{ color: 'var(--text-secondary)' }}>
+        <p className="quote-author opacity-0 text-sm mt-1 text-text-secondary">
           Owner, Suraj Hardware Suppliers — Itahari
         </p>
       </div>

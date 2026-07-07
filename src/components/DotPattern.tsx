@@ -221,7 +221,7 @@ export function DotPattern({
       ref={containerRef}
       className={cn("absolute inset-0 overflow-hidden pointer-events-none", className)}
     >
-      <canvas ref={canvasRef} className="absolute inset-0 h-full w-full" />
+      <canvas ref={canvasRef} className="absolute inset-0 h-full w-full" aria-hidden="true" />
 
       <div
         className="pointer-events-none absolute inset-0"

@@ -31,19 +31,19 @@ const perks = [
   {
     icon: Shield,
     title: 'Health Benefits',
-    description: 'Health insurance coverage for you and your family. We take care of our people.',
+    description: 'Health insurance coverage for you and your family.',
   },
 ]
 
 export default function PerksSection() {
   return (
-    <section className="section-padding bg-white">
+    <section className="section-padding bg-white dark:bg-bg-primary">
       <div className="content-max-width">
         <ScrollReveal>
           <SectionHeader
             label="PERKS & BENEFITS"
             heading="What you get"
-            subheading="Beyond the work itself — we invest in the people building it."
+            subheading="We invest in the people building it."
           />
         </ScrollReveal>
 
@@ -51,20 +51,18 @@ export default function PerksSection() {
           {perks.map((perk) => (
             <div
               key={perk.title}
-              className="flex items-start gap-4 p-6 rounded-xl transition-all duration-300 hover:-translate-y-1"
-              style={{ backgroundColor: 'var(--bg-light)' }}
+              className="flex items-start gap-4 p-6 rounded-xl transition-all duration-300 hover:-translate-y-1 bg-bg-light"
             >
               <div
-                className="w-10 h-10 rounded-full flex items-center justify-center flex-shrink-0"
-                style={{ backgroundColor: 'var(--accent-badge)' }}
+                className="w-10 h-10 rounded-full flex items-center justify-center flex-shrink-0 bg-accent-badge"
               >
-                <perk.icon size={18} style={{ color: 'var(--accent-dark)' }} />
+                <perk.icon size={18} className="text-accent-dark" />
               </div>
               <div>
-                <h3 className="text-base font-semibold" style={{ color: 'var(--bg-primary)' }}>
+                <h3 className="text-base font-semibold text-text-primary">
                   {perk.title}
                 </h3>
-                <p className="mt-1 text-sm leading-relaxed" style={{ color: 'var(--text-body)' }}>
+                <p className="mt-1 text-sm leading-relaxed text-text-body">
                   {perk.description}
                 </p>
               </div>

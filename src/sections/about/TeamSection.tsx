@@ -130,7 +130,7 @@ function getInitials(name: string) {
 
 export default function TeamSection() {
   return (
-    <section className="section-padding bg-white">
+    <section className="section-padding bg-white dark:bg-bg-primary">
       <div className="content-max-width">
         <ScrollReveal>
           <SectionHeader
@@ -145,8 +145,7 @@ export default function TeamSection() {
             <ScrollReveal key={dept.name}>
               <div className="mb-6">
                 <span
-                  className="inline-flex items-center gap-2 rounded-full px-4 py-1.5 label-text"
-                  style={{ backgroundColor: 'var(--accent-badge)', color: 'var(--accent-badge-text)' }}
+                  className="inline-flex items-center gap-2 rounded-full px-4 py-1.5 label-text bg-accent-badge text-accent-badge-text"
                 >
                   {dept.name}
                 </span>
@@ -155,28 +154,28 @@ export default function TeamSection() {
               <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-x-6 gap-y-10">
                 {dept.members.map((member) => (
                   <div key={member.name} className="group flex flex-col items-center text-center">
-                    <div className="w-36 h-36 rounded-full overflow-hidden bg-gray-100 flex items-center justify-center">
+                    <div className="w-36 h-36 rounded-full overflow-hidden bg-gray-100 dark:bg-gray-800 flex items-center justify-center">
                       {member.image ? (
                         <Image
                           src={member.image}
-                          alt={member.name}
+                          alt={`${member.name} — ${member.role}`}
                           width={144}
                           height={144}
                           className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                         />
                       ) : (
-                        <span className="text-3xl font-bold" style={{ color: 'var(--accent-badge-text)' }}>
+                        <span className="text-3xl font-bold text-accent-badge-text">
                           {getInitials(member.name)}
                         </span>
                       )}
                     </div>
-                    <h3 className="mt-4 text-[15px] font-semibold" style={{ color: 'var(--bg-primary)' }}>
+                    <h3 className="mt-4 text-[15px] font-semibold text-text-primary">
                       {member.name}
                     </h3>
-                    <p className="label-text mt-1" style={{ color: 'var(--accent-dark)', fontSize: '11px' }}>
+                    <p className="label-text mt-1 text-accent-dark text-[11px]">
                       {member.role}
                     </p>
-                    <p className="text-[13px] mt-1.5 leading-relaxed max-w-[220px]" style={{ color: 'var(--text-tertiary)' }}>
+                    <p className="text-[13px] mt-1.5 leading-relaxed max-w-[220px] text-text-tertiary">
                       {member.description}
                     </p>
                   </div>

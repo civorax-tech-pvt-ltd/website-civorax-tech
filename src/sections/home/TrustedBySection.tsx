@@ -13,41 +13,30 @@ const businesses = [
 
 export default function TrustedBySection() {
   return (
-    <section className="py-16" style={{ backgroundColor: 'var(--bg-trustedby)' }}>
+    <section className="py-16 bg-bg-trustedby">
       <div className="content-max-width px-4 sm:px-6 lg:px-8">
-        <p className="text-sm text-center mb-8 font-medium" style={{ color: 'var(--text-body)' }}>
+        <p className="text-sm text-center mb-8 font-medium text-text-body">
           Trusted by businesses across Koshi Province
         </p>
 
         {/* Marquee Container */}
         <div className="relative overflow-hidden">
           {/* Fade edges */}
-          <div className="absolute left-0 top-0 bottom-0 w-20 z-10" style={{ background: 'linear-gradient(to right, var(--bg-trustedby), transparent)' }} />
-          <div className="absolute right-0 top-0 bottom-0 w-20 z-10" style={{ background: 'linear-gradient(to left, var(--bg-trustedby), transparent)' }} />
+          <div className="absolute left-0 top-0 bottom-0 w-20 z-10 bg-gradient-to-r from-bg-trustedby to-transparent" />
+          <div className="absolute right-0 top-0 bottom-0 w-20 z-10 bg-gradient-to-l from-bg-trustedby to-transparent" />
 
-          <div className="flex animate-marquee whitespace-nowrap" style={{ animationDuration: '40s' }}>
+          <div className="flex animate-marquee whitespace-nowrap group-hover:[animation-play-state:paused] focus-within:[animation-play-state:paused]">
             {[...businesses, ...businesses].map((biz, i) => {
               const Icon = biz.icon
               return (
                 <div
                   key={`${biz.name}-${i}`}
-                  className="inline-flex items-center gap-2.5 mx-3 px-5 py-3 rounded-xl whitespace-nowrap"
-                  style={{
-                    backgroundColor: 'var(--text-white)',
-                    border: '1px solid var(--border-light)',
-                    boxShadow: '0 1px 3px rgba(0,0,0,0.06)',
-                  }}
+                  className="inline-flex items-center gap-2.5 mx-3 px-5 py-3 rounded-xl whitespace-nowrap bg-white dark:bg-bg-secondary border border-border-light shadow-xs"
                 >
-                  <div
-                    className="w-7 h-7 rounded-lg flex items-center justify-center flex-shrink-0"
-                    style={{ backgroundColor: 'var(--accent-badge)' }}
-                  >
-                    <Icon size={14} style={{ color: 'var(--accent-badge-text)' }} />
+                  <div className="w-7 h-7 rounded-lg flex items-center justify-center flex-shrink-0 bg-accent-badge">
+                    <Icon size={14} className="text-accent-badge-text" />
                   </div>
-                  <span
-                    className="text-sm font-semibold tracking-wide"
-                    style={{ color: 'var(--text-logo)' }}
-                  >
+                  <span className="text-sm font-semibold tracking-wide text-text-logo">
                     {biz.name}
                   </span>
                 </div>

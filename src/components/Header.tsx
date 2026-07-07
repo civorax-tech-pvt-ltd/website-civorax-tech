@@ -1,9 +1,10 @@
 'use client'
 
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useRef, useCallback } from 'react'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { Menu, X, ArrowRight } from 'lucide-react'
+import ThemeToggle from './ThemeToggle'
 
 const navLinks = [
   { label: 'Home', path: '/' },
@@ -39,6 +40,34 @@ export default function Header() {
     return () => { document.body.style.overflow = '' }
   }, [mobileOpen])
 
+  const firstLinkRef = useRef<HTMLAnchorElement>(null)
+  const overlayRef = useRef<HTMLDivElement>(null)
+
+  const handleOverlayKeyDown = useCallback((e: React.KeyboardEvent) => {
+    if (e.key === 'Escape') {
+      setMobileOpen(false)
+      return
+    }
+    if (e.key === 'Tab' && overlayRef.current) {
+      const focusable = overlayRef.current.querySelectorAll('a, button, [tabindex]:not([tabindex="-1"])')
+      const first = focusable[0] as HTMLElement
+      const last = focusable[focusable.length - 1] as HTMLElement
+      if (e.shiftKey && document.activeElement === first) {
+        e.preventDefault()
+        last.focus()
+      } else if (!e.shiftKey && document.activeElement === last) {
+        e.preventDefault()
+        first.focus()
+      }
+    }
+  }, [])
+
+  useEffect(() => {
+    if (mobileOpen && firstLinkRef.current) {
+      firstLinkRef.current.focus()
+    }
+  }, [mobileOpen])
+
   return (
     <>
       <header
@@ -53,9 +82,8 @@ export default function Header() {
           <Link href="/" className="flex items-center gap-0">
             <span className="text-xl font-bold text-white">Civora</span>
             <span
-              className="text-xl font-bold"
+              className="text-xl font-bold text-accent"
               style={{
-                color: 'var(--accent)',
                 clipPath: 'polygon(15% 0%, 100% 0%, 85% 100%, 0% 100%)',
                 padding: '0 6px',
                 marginLeft: '2px',
@@ -71,11 +99,9 @@ export default function Header() {
               <Link
                 key={link.path}
                 href={link.path}
-                className="relative text-[15px] font-medium transition-opacity duration-200"
-                style={{
-                  color: pathname === link.path ? 'var(--text-white)' : 'rgba(255,255,255,0.7)',
-                  opacity: pathname === link.path ? 1 : 0.7,
-                }}
+                className={`relative text-[15px] font-medium transition-opacity duration-200 ${
+                  pathname === link.path ? 'text-text-white opacity-100' : 'text-white/70 opacity-70'
+                }`}
                 onMouseEnter={(e: React.MouseEvent<HTMLAnchorElement>) => { e.currentTarget.style.opacity = '1' }}
                 onMouseLeave={(e: React.MouseEvent<HTMLAnchorElement>) => {
                   if (pathname !== link.path) {
@@ -86,8 +112,7 @@ export default function Header() {
                 {link.label}
                 {pathname === link.path && (
                   <span
-                    className="absolute -bottom-1 left-0 right-0 h-0.5"
-                    style={{ backgroundColor: 'var(--accent-light)' }}
+                    className="absolute -bottom-1 left-0 right-0 h-0.5 bg-accent-light"
                   />
                 )}
               </Link>
@@ -95,28 +120,29 @@ export default function Header() {
           </nav>
 
           {/* CTA Button */}
-          <Link
-            href="/contact"
-            className="hidden md:inline-flex items-center gap-2 text-[15px] font-semibold text-white rounded-full transition-all duration-300 hover:gap-3"
-            style={{
-              backgroundColor: scrolled ? 'var(--bg-primary)' : 'transparent',
-              border: '1px solid var(--border-dark)',
-              padding: '10px 24px',
-            }}
-            onMouseEnter={(e: React.MouseEvent<HTMLAnchorElement>) => {
-              e.currentTarget.style.backgroundColor = 'var(--accent-light)'
-              e.currentTarget.style.color = 'var(--bg-primary)'
-              e.currentTarget.style.borderColor = 'var(--accent-light)'
-            }}
-            onMouseLeave={(e: React.MouseEvent<HTMLAnchorElement>) => {
-              e.currentTarget.style.backgroundColor = scrolled ? 'var(--bg-primary)' : 'transparent'
-              e.currentTarget.style.color = 'var(--text-white)'
-              e.currentTarget.style.borderColor = 'var(--border-dark)'
-            }}
-          >
-            Get In Touch
-            <ArrowRight size={16} />
-          </Link>
+          <div className="hidden md:flex items-center gap-3">
+            <ThemeToggle />
+            <Link
+              href="/contact"
+              className="inline-flex items-center gap-2 text-[15px] font-semibold text-white rounded-full transition-all duration-300 hover:gap-3 px-6 py-2.5 border border-border-dark"
+              style={{
+                backgroundColor: scrolled ? 'var(--bg-primary)' : 'transparent',
+              }}
+              onMouseEnter={(e: React.MouseEvent<HTMLAnchorElement>) => {
+                e.currentTarget.style.backgroundColor = 'var(--accent-light)'
+                e.currentTarget.style.color = 'var(--bg-primary)'
+                e.currentTarget.style.borderColor = 'var(--accent-light)'
+              }}
+              onMouseLeave={(e: React.MouseEvent<HTMLAnchorElement>) => {
+                e.currentTarget.style.backgroundColor = scrolled ? 'var(--bg-primary)' : 'transparent'
+                e.currentTarget.style.color = 'var(--text-white)'
+                e.currentTarget.style.borderColor = 'var(--border-dark)'
+              }}
+            >
+              Get In Touch
+              <ArrowRight size={16} aria-hidden="true" />
+            </Link>
+          </div>
 
           {/* Mobile Hamburger */}
           <button
@@ -131,9 +157,13 @@ export default function Header() {
 
       {/* Mobile Overlay */}
       <div
-        className="fixed inset-0 z-40 flex flex-col items-center justify-center gap-8 md:hidden transition-all duration-300"
+        ref={overlayRef}
+        role="dialog"
+        aria-modal="true"
+        aria-label="Mobile navigation"
+        onKeyDown={handleOverlayKeyDown}
+        className="fixed inset-0 z-40 flex flex-col items-center justify-center gap-8 md:hidden transition-all duration-300 bg-[rgba(26,26,26,0.98)]"
         style={{
-          backgroundColor: 'rgba(26,26,26,0.98)',
           opacity: mobileOpen ? 1 : 0,
           pointerEvents: mobileOpen ? 'auto' : 'none',
         }}
@@ -141,10 +171,12 @@ export default function Header() {
         {navLinks.map((link, i) => (
           <Link
             key={link.path}
+            ref={i === 0 ? firstLinkRef : undefined}
             href={link.path}
-            className="text-2xl font-semibold transition-all duration-300"
+            className={`text-2xl font-semibold transition-all duration-300 ${
+              pathname === link.path ? 'text-accent-light' : 'text-text-white'
+            }`}
             style={{
-              color: pathname === link.path ? 'var(--accent-light)' : 'var(--text-white)',
               transform: mobileOpen ? 'translateY(0)' : 'translateY(12px)',
               opacity: mobileOpen ? 1 : 0,
               transitionDelay: mobileOpen ? `${i * 60}ms` : '0ms',
@@ -156,10 +188,8 @@ export default function Header() {
         ))}
         <Link
           href="/contact"
-          className="mt-4 inline-flex items-center gap-2 text-lg font-semibold rounded-full px-8 py-3 transition-all duration-300"
+          className="mt-4 inline-flex items-center gap-2 text-lg font-semibold rounded-full px-8 py-3 transition-all duration-300 bg-accent-light text-bg-primary"
           style={{
-            backgroundColor: 'var(--accent-light)',
-            color: 'var(--bg-primary)',
             transform: mobileOpen ? 'translateY(0)' : 'translateY(12px)',
             opacity: mobileOpen ? 1 : 0,
             transitionDelay: mobileOpen ? `${navLinks.length * 60}ms` : '0ms',
@@ -169,6 +199,16 @@ export default function Header() {
           Get In Touch
           <ArrowRight size={18} />
         </Link>
+        <div
+          className="mt-2 transition-all duration-300"
+          style={{
+            transform: mobileOpen ? 'translateY(0)' : 'translateY(12px)',
+            opacity: mobileOpen ? 1 : 0,
+            transitionDelay: mobileOpen ? `${(navLinks.length + 1) * 60}ms` : '0ms',
+          }}
+        >
+          <ThemeToggle />
+        </div>
       </div>
     </>
   )

@@ -1,8 +1,4 @@
-Using Node.js 20, Tailwind CSS v3.4.19, and Vite v7.2.4
-
-Tailwind CSS has been set up with the shadcn theme
-
-Setup complete: /mnt/agents/output/app
+Next.js 15 with TypeScript, Tailwind CSS v3.4.19, shadcn/ui
 
 Components (40+):
   accordion, alert-dialog, alert, aspect-ratio, avatar, badge, breadcrumb,
@@ -18,14 +14,12 @@ Usage:
   import { Card, CardHeader, CardTitle } from '@/components/ui/card'
 
 Structure:
-  src/sections/        Page sections
+  src/app/             Next.js App Router (pages, layout, globals.css)
+  src/sections/        Page sections (home, about, products, career, contact)
+  src/components/      Shared components (Header, Footer, blocks, mockups)
   src/hooks/           Custom hooks
+  src/lib/             Utilities (cn helper, etc.)
   src/types/           Type definitions
-  src/App.css          Styles specific to the Webapp
-  src/App.tsx          Root React component
-  src/index.css        Global styles
-  src/main.tsx         Entry point for rendering the Webapp
-  index.html           Entry point for the Webapp
-  tailwind.config.js   Configures Tailwind's theme, plugins, etc.
-  vite.config.ts       Main build and dev server settings for Vite
-  postcss.config.js    Config file for CSS post-processing tools
+  tailwind.config.js   Tailwind theme, custom tokens, animations
+  next.config.ts       Next.js config
+  postcss.config.js    PostCSS for Tailwind

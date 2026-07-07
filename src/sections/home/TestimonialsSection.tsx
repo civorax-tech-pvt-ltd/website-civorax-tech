@@ -35,7 +35,7 @@ const testimonials = [
 
 export default function TestimonialsSection() {
   return (
-    <section className="section-padding relative overflow-hidden" style={{ backgroundColor: 'var(--bg-light)' }}>
+    <section className="section-padding relative overflow-hidden bg-bg-light">
       {/* Subtle background pattern */}
       <div
         className="absolute inset-0 pointer-events-none opacity-[0.03]"
@@ -49,7 +49,7 @@ export default function TestimonialsSection() {
         <ScrollReveal>
           <SectionHeader
             label="TESTIMONIALS"
-            heading="What our clients say"
+            heading="Client feedback"
             subheading="Real feedback from businesses across Koshi Province."
           />
         </ScrollReveal>
@@ -57,72 +57,50 @@ export default function TestimonialsSection() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-16">
           {testimonials.map((t, i) => (
             <ScrollReveal key={t.name} delay={i * 0.12}>
-              <div
-                className="rounded-2xl p-8 transition-all duration-300 hover:-translate-y-1 h-full flex flex-col relative"
-                style={{
-                  backgroundColor: 'var(--text-white)',
-                  border: '1px solid var(--border-light)',
-                  boxShadow: '0 2px 8px rgba(0,0,0,0.04)',
-                }}
-              >
+              <div className="rounded-2xl p-8 bg-white dark:bg-bg-card border border-border-light shadow-xs transition-all duration-300 hover:-translate-y-1 h-full flex flex-col relative">
                 {/* Quote icon */}
-                <div
-                  className="w-10 h-10 rounded-full flex items-center justify-center flex-shrink-0 mb-4"
-                  style={{ backgroundColor: 'var(--accent-badge)' }}
-                >
-                  <Quote size={18} style={{ color: 'var(--accent-dark)' }} />
+                <div className="w-10 h-10 rounded-full flex items-center justify-center flex-shrink-0 mb-4 bg-accent-badge">
+                  <Quote size={18} className="text-accent-dark dark:text-accent-light" />
                 </div>
 
                 {/* Badge */}
-                <span
-                  className="inline-block self-start rounded-md px-2.5 py-1 label-text mb-4"
-                  style={{ backgroundColor: 'var(--accent-badge)', color: 'var(--accent-badge-text)' }}
-                >
+                <span className="inline-block self-start rounded-md px-2.5 py-1 label-text mb-4 bg-accent-badge text-accent-badge-text">
                   {t.badge}
                 </span>
 
                 {/* Quote text */}
-                <p
-                  className="relative text-[15px] leading-relaxed italic flex-1"
-                  style={{ color: 'var(--text-body)' }}
-                >
+                <p className="relative text-[15px] leading-relaxed italic flex-1 text-text-body">
                   &ldquo;{t.quote}&rdquo;
                 </p>
 
                 {/* Divider */}
-                <div
-                  className="my-6 h-px"
-                  style={{ backgroundColor: 'var(--border-light)' }}
-                />
+                <div className="my-6 h-px bg-border-light" />
 
                 {/* Author */}
                 <div className="flex items-center gap-3">
-                  <div
-                    className="w-10 h-10 rounded-full flex items-center justify-center flex-shrink-0 overflow-hidden"
-                    style={{ backgroundColor: 'var(--accent-badge)' }}
-                  >
+                  <div className="w-10 h-10 rounded-full flex items-center justify-center flex-shrink-0 overflow-hidden bg-accent-badge">
                     {t.image ? (
                       <Image
                         src={t.image}
-                        alt={t.name}
+                        alt={`Photo of ${t.name}, ${t.role} at ${t.business}`}
                         width={40}
                         height={40}
                         className="w-full h-full object-cover rounded-full"
                       />
                     ) : (
-                      <span className="text-sm font-bold" style={{ color: 'var(--accent-badge-text)' }}>
+                      <span className="text-sm font-bold text-accent-badge-text">
                         {t.name.split(' ').map((n) => n[0]).join('')}
                       </span>
                     )}
                   </div>
                   <div>
-                    <p className="text-sm font-semibold" style={{ color: 'var(--bg-primary)' }}>
+                    <p className="text-sm font-semibold text-text-primary dark:text-white">
                       {t.name}
                     </p>
-                    <p className="text-xs" style={{ color: 'var(--text-tertiary)' }}>
+                    <p className="text-xs text-text-tertiary">
                       {t.role}, {t.business}
                     </p>
-                    <p className="text-xs" style={{ color: 'var(--text-secondary)' }}>
+                    <p className="text-xs text-text-secondary">
                       {t.location}
                     </p>
                   </div>

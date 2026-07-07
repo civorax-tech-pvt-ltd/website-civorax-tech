@@ -45,7 +45,7 @@ const products = [
 
 export default function ProductCardsSection() {
   return (
-    <section className="section-padding" style={{ backgroundColor: 'var(--bg-light)' }}>
+    <section className="section-padding bg-bg-light">
       <div className="content-max-width">
         <ScrollReveal>
           <SectionHeader
@@ -61,16 +61,15 @@ export default function ProductCardsSection() {
             <ScrollReveal key={product.title}>
               <Link href={`/products/${product.slug}`} className="block h-full">
                 <Card
-                  className="h-full transition-all duration-300 hover:-translate-y-1 flex flex-col"
-                  style={{ backgroundColor: '#f5f5f5', border: '1px solid var(--border-light)', boxShadow: 'none' }}
+                  className="h-full transition-all duration-300 hover:-translate-y-1 flex flex-col bg-bg-light border border-border-light shadow-none"
                   onMouseEnter={(e) => { (e.currentTarget as HTMLDivElement).style.boxShadow = '0 8px 24px rgba(54,83,20,0.12)' }}
                   onMouseLeave={(e) => { (e.currentTarget as HTMLDivElement).style.boxShadow = 'none' }}
                 >
                   <CardHeader>
-                    <CardTitle className="text-xl font-bold" style={{ color: 'var(--bg-primary)' }}>
+                    <CardTitle className="text-xl font-bold text-text-primary">
                       {product.title}
                     </CardTitle>
-                    <CardDescription className="text-[15px] leading-relaxed" style={{ color: 'var(--text-body)' }}>
+                    <CardDescription className="text-[15px] leading-relaxed text-text-body">
                       {product.description}
                     </CardDescription>
                   </CardHeader>
@@ -78,8 +77,8 @@ export default function ProductCardsSection() {
                   <CardContent className="flex-1">
                     <ul className="space-y-3">
                       {product.features.map((f) => (
-                        <li key={f} className="flex items-start gap-2.5 text-sm" style={{ color: 'var(--text-body)' }}>
-                          <Check size={16} className="mt-0.5 flex-shrink-0" style={{ color: 'var(--accent-dark)' }} />
+                        <li key={f} className="flex items-start gap-2.5 text-sm text-text-body">
+                          <Check size={16} className="mt-0.5 flex-shrink-0 text-accent-dark" />
                           {f}
                         </li>
                       ))}
@@ -87,10 +86,7 @@ export default function ProductCardsSection() {
                   </CardContent>
 
                   <CardFooter>
-                    <span
-                      className="group inline-flex items-center gap-1 label-text transition-colors duration-200"
-                      style={{ color: 'var(--accent-dark)' }}
-                    >
+                    <span className="group inline-flex items-center gap-1 label-text transition-colors duration-200 text-accent-dark">
                       {product.cta}
                       <ArrowRight size={12} className="transition-transform duration-300 group-hover:translate-x-1" />
                     </span>
