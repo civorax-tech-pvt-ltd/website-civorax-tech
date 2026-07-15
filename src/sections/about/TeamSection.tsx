@@ -64,7 +64,7 @@ const departments = [
         image: '/assets/profile_picture/dipendra.jpg',
       },
       {
-        name: 'Pushpalata Yadav',
+        name: 'Pushplata Yadav',
         role: 'Full Stack Engineer',
         image: '/assets/profile_picture/pushpalata.jpeg',
       },
