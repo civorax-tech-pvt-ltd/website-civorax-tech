@@ -66,12 +66,12 @@ const departments = [
       {
         name: 'Pushpalata Yadav',
         role: 'Full Stack Engineer',
-        image: '',
+        image: '/assets/profile_picture/pushpalata.jpeg',
       },
       {
         name: 'Bhuwan Dahal',
         role: 'Flutter Developer',
-        image: '',
+        image: '/assets/profile_picture/bhuwan.jpeg',
       },
       {
         name: 'Arjun Yadav',
