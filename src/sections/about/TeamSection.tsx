@@ -114,7 +114,7 @@ function getInitials(name: string) {
 }
 
 export default function TeamSection() {
-  const [activeFilter, setActiveFilter] = useState('LEADERSHIP')
+  const [activeFilter, setActiveFilter] = useState('ALL')
 
   const filteredDepartments = activeFilter === 'ALL'
     ? [{ name: 'ALL', members: departments.flatMap((d) => d.members) }]
