@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import { Monitor, Compass, MapPin, Smartphone, Database, Users, Heart, Headphones, Globe, Server, ArrowRight } from 'lucide-react'
+import { Monitor, Compass, MapPin, Smartphone, Database, Users, Heart, Headphones, Globe, Server, ArrowRight, FileText } from 'lucide-react'
 import WhatsAppFAB from './WhatsAppFAB'
 
 const socialLinks = [
@@ -90,6 +90,12 @@ export default function Footer() {
                   <Database size={13} className="opacity-50 group-hover:opacity-100 transition-opacity text-accent-light" />
                   Enterprise ERP
                 </Link>
+              </li>
+              <li>
+                <a href="https://tenderxnepal.com" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-sm text-text-secondary transition-colors duration-200 hover:text-white group">
+                  <FileText size={13} className="opacity-50 group-hover:opacity-100 transition-opacity text-accent-light" />
+                  TenderX Nepal
+                </a>
               </li>
             </ul>
           </nav>

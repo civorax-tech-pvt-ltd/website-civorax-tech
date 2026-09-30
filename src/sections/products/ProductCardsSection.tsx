@@ -6,7 +6,14 @@ import ScrollReveal from '../../components/ScrollReveal'
 import Link from 'next/link'
 import { Card, CardHeader, CardTitle, CardDescription, CardContent, CardFooter } from '../../components/ui/card'
 
-const products = [
+const products: {
+  slug: string | null
+  href?: string
+  title: string
+  description: string
+  features: string[]
+  cta: string
+}[] = [
   {
     slug: 'civorax-retail-pos',
     title: 'CivoraX Retail POS',
@@ -41,6 +48,18 @@ const products = [
     ],
     cta: 'Discuss your website',
   },
+  {
+    slug: null,
+    href: 'https://tenderxnepal.com',
+    title: 'TenderX Nepal',
+    description: 'Bid preparation platform built for Nepali contractors. Streamline your tendering process with tools designed for the local procurement landscape.',
+    features: [
+      'Structured bid document preparation',
+      'Built for Nepal government tenders',
+      'Saves time on repetitive paperwork',
+    ],
+    cta: 'Visit TenderX Nepal',
+  },
 ]
 
 export default function ProductCardsSection() {
@@ -56,10 +75,14 @@ export default function ProductCardsSection() {
           />
         </ScrollReveal>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mt-12">
           {products.map((product) => (
             <ScrollReveal key={product.title}>
-              <Link href={`/products/${product.slug}`} className="block h-full">
+              <Link
+                href={product.slug ? `/products/${product.slug}` : (product.href ?? '#')}
+                className="block h-full"
+                {...(!product.slug && { target: '_blank', rel: 'noopener noreferrer' })}
+              >
                 <Card
                   className="h-full transition-all duration-300 hover:-translate-y-1 flex flex-col bg-bg-light border border-border-light shadow-none"
                   onMouseEnter={(e) => { (e.currentTarget as HTMLDivElement).style.boxShadow = '0 8px 24px rgba(54,83,20,0.12)' }}

@@ -12,6 +12,7 @@ export const metadata: Metadata = {
     'inventory software nepal', 'POS system nepal', 'restaurant POS',
     'offline POS', 'ERP system', 'best inventory software',
     'billing software nepal', 'gen AI apps',
+    'TenderX Nepal', 'bid preparation nepal', 'tender software nepal',
   ],
   openGraph: {
     title: 'CivoraX Products — Retail POS, Core ERP, Web Apps',
